@@ -108,14 +108,20 @@ body {
   top: 24px; right: 24px;
   font-family: var(--mono);
   font-size: 13px;
+  background: rgba(10,10,15,0.75);
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  z-index: 10;
 }
 .lang-switch a {
-  color: var(--text-muted);
+  color: #ddd;
   text-decoration: none;
   transition: color 0.2s;
 }
 .lang-switch a:hover { color: var(--accent); }
-.lang-switch .active { color: var(--accent); }
+.lang-switch .active { color: var(--accent); font-weight: 600; }
 
 /* ===== SCROLL CUE ===== */
 .scroll-cue {
