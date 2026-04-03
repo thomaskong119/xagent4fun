@@ -51,9 +51,10 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 30%, rgba(201,64,64,0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(201,168,108,0.05) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 50% 30%, rgba(201,64,64,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(201,168,108,0.08) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-tag {
@@ -414,7 +415,7 @@ body {
 <body>
 
 <!-- HERO -->
-<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.7) 40%, rgba(10,10,15,0.92) 80%, var(--bg-primary) 100%), url('../../assets/hormuz-map.png') center/cover no-repeat;">
+<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.7) 40%, rgba(10,10,15,0.92) 80%, var(--bg-primary) 100%), url('../assets/hormuz-map.png') center/cover no-repeat;">
   <div class="lang-switch">
     <a href="#" class="active">中文</a> / <a href="../en/index.html">EN</a>
   </div>
