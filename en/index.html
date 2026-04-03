@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Persian Gulf Enigma — US-Iran War Deep Investigation Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg-primary: #0a0a0f;
@@ -19,8 +22,8 @@
   --red: #c94040;
   --red-dim: rgba(201,64,64,0.15);
   --border: #2a2a35;
-  --serif: 'Playfair Display', 'Noto Serif SC', 'Source Han Serif CN', serif;
-  --sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --serif: 'Cormorant Garamond','EB Garamond', 'Noto Serif SC', 'Source Han Serif CN', serif;
+  --sans: 'EB Garamond', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
   --mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
@@ -30,7 +33,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--sans);
-  line-height: 1.8;
+  line-height: 2; letter-spacing: 0.02em;;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -108,14 +111,20 @@ body {
   top: 24px; right: 24px;
   font-family: var(--mono);
   font-size: 13px;
+  background: rgba(10,10,15,0.75);
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  z-index: 10;
 }
 .lang-switch a {
-  color: var(--text-muted);
+  color: #ddd;
   text-decoration: none;
   transition: color 0.2s;
 }
 .lang-switch a:hover { color: var(--accent); }
-.lang-switch .active { color: var(--accent); }
+.lang-switch .active { color: var(--accent); font-weight: 600; }
 
 /* ===== SCROLL CUE ===== */
 .scroll-cue {
