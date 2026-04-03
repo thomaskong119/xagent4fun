@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5: The Price and the Puzzle — The Persian Gulf Enigma</title>
+<style>
+:root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--bg-card-hover:#222233;--text-primary:#e8e6e1;--text-secondary:#9a9a9a;--text-muted:#666;--accent:#c9a86c;--accent-dim:#8a7040;--red:#c94040;--red-dim:rgba(201,64,64,0.15);--orange:#d4842a;--blue:#4a90d9;--border:#2a2a35;--serif:'Playfair Display','Noto Serif SC','Source Han Serif CN',serif;--sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s}.nav a:hover{color:var(--accent)}.nav-title{font-family:var(--serif);font-size:14px;color:var(--text-secondary)}
+.ch-hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}.ch-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:none;z-index:1;pointer-events:none}.ch-num{font-family:var(--serif);font-size:6rem;color:var(--blue);opacity:0.3;line-height:1}.ch-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin:16px 0}.ch-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:560px}
+.content{max-width:720px;margin:0 auto;padding:0 24px 100px}.content h2{font-family:var(--serif);font-size:1.5rem;margin:64px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border)}.content h3{font-family:var(--serif);font-size:1.15rem;margin:40px 0 16px;color:var(--accent)}.content p{margin-bottom:20px;color:var(--text-secondary);font-size:15px;line-height:1.9}.content p strong{color:var(--text-primary);font-weight:600}
+.callout{background:var(--bg-card);border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:14px}.callout.danger{border-left-color:var(--red)}.callout.blue{border-left-color:var(--blue)}.callout-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}.callout.danger .callout-title{color:var(--red)}.callout.blue .callout-title{color:var(--blue)}
+.data-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}.dc-item{background:var(--bg-secondary);padding:20px 16px;text-align:center}.dc-value{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent)}.dc-value.red{color:var(--red)}.dc-value.orange{color:var(--orange)}.dc-label{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* COMPARISON */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.compare-card{background:var(--bg-secondary);border:1px solid var(--border);padding:20px}
+.compare-side{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.compare-side.us{color:var(--blue)}
+.compare-side.iran{color:var(--red)}
+.compare-point{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary)}
+.compare-point:last-child{border-bottom:none}
+
+/* SCENARIO */
+.scenarios{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:32px 0}
+.scenario{background:var(--bg-secondary);border:1px solid var(--border);padding:24px;position:relative}
+.scenario-prob{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:11px;padding:2px 8px}
+.prob-high{background:var(--red-dim);color:var(--red)}
+.prob-mid{background:rgba(212,132,42,0.15);color:var(--orange)}
+.prob-low{background:rgba(74,144,217,0.15);color:var(--blue)}
+.scenario-title{font-family:var(--serif);font-size:1rem;font-weight:600;margin-bottom:8px}
+.scenario-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+/* CHART BAR */
+.bar-chart{margin:32px 0}
+.bar-row{display:flex;align-items:center;margin-bottom:12px;gap:12px}
+.bar-label{width:100px;font-size:12px;color:var(--text-muted);text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:24px;background:var(--bg-secondary);position:relative;overflow:hidden}
+.bar-fill{height:100%;position:absolute;left:0;top:0;transition:width 1s ease}
+.bar-fill.red{background:linear-gradient(90deg,var(--red),rgba(201,64,64,0.5))}
+.bar-fill.orange{background:linear-gradient(90deg,var(--orange),rgba(212,132,42,0.5))}
+.bar-fill.accent{background:linear-gradient(90deg,var(--accent),rgba(201,168,108,0.5))}
+.bar-value{font-family:var(--mono);font-size:12px;color:var(--text-secondary);width:60px;flex-shrink:0}
+
+.ch-nav{display:flex;justify-content:space-between;padding:40px 24px;max-width:720px;margin:0 auto;border-top:1px solid var(--border)}.ch-nav a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s}.ch-nav a:hover{color:var(--accent)}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}.footer-brand{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:8px}.footer-note{font-size:12px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.6}
+@media(max-width:640px){.data-card{grid-template-columns:repeat(2,1fr)}.compare{grid-template-columns:1fr}.scenarios{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="chapter4-wildfire.html">← Previous Chapter</a>
+  <span class="nav-title">Chapter 5: The Price and the Puzzle</span>
+  <a href="index.html">Table of Contents</a>
+</nav>
+
+<section class="ch-hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.45) 0%, rgba(10,10,15,0.65) 40%, rgba(10,10,15,0.9) 80%, #0a0a0f 100%), url('../assets/oil-history.png') center bottom/cover no-repeat;">
+  <div class="ch-num">V</div>
+  <div class="ch-title">The Price and the Puzzle</div>
+  <div class="ch-subtitle">When the bill for war arrives, there are no winners<br>Economic shockwaves, humanitarian catastrophe, great power rivalry, and an uncertain future</div>
+</section>
+
+<article class="content">
+
+<h2>I. Iran's Price: Civilian Life Collapses</h2>
+
+<p>The war has dealt a devastating blow to Iran's economy and civilian life. US-Israeli strikes extended well beyond military targets, systematically destroying <strong>roads, bridges, ports, oil storage facilities, refineries, desalination plants, hospitals, and schools</strong>—the economic and civilian infrastructure of the nation.</p>
+
+<h3>Skyrocketing Prices</h3>
+
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">Flour</div>
+    <div class="bar-track"><div class="bar-fill red" style="width:98%"></div></div>
+    <div class="bar-value">+986%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Meat</div>
+    <div class="bar-track"><div class="bar-fill red" style="width:82%"></div></div>
+    <div class="bar-value">+817%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Bottled Water</div>
+    <div class="bar-track"><div class="bar-fill orange" style="width:65%"></div></div>
+    <div class="bar-value">+650%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Inflation Rate</div>
+    <div class="bar-track"><div class="bar-fill accent" style="width:45%"></div></div>
+    <div class="bar-value">45%</div>
+  </div>
+</div>
+
+<div style="background:var(--bg-secondary);border:1px solid var(--border);padding:20px;margin:32px 0;">
+  <canvas id="priceChart" height="220"></canvas>
+</div>
+
+<p>The rial has plummeted, and the prices of food, medicine, gasoline, and batteries have soared. Flour prices have risen nearly tenfold. <strong>The war has accelerated the collapse of an economy already fragile from decades of sanctions</strong>.</p>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">1,300+</div>
+    <div class="dc-label">Deaths (Official, First 9 Days)</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">5,000+</div>
+    <div class="dc-label">Wounded</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value orange">45%</div>
+    <div class="dc-label">Inflation Rate</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">986%</div>
+    <div class="dc-label">Flour Price Increase</div>
+  </div>
+</div>
+
+<div class="callout danger">
+  <div class="callout-title">Humanitarian Catastrophe</div>
+  <p style="margin:0;color:var(--text-secondary)">The purpose of striking infrastructure, in the US and Israel's own words, is to "destroy Iran's basic ability to sustain its population, breaking the people's will to resist." Desalination plants, hospitals, and schools are not military targets—they are the foundations of survival. When flour costs ten times more and the wounded have no hospitals to turn to, that is when the war truly begins for ordinary people.</p>
+</div>
+
+<h2>II. Global Economic Shockwaves</h2>
+
+<p>The war's impact on the global economy has far exceeded expectations. The IEA has characterized the Strait of Hormuz disruption as <strong>"the largest supply disruption in the history of the global oil market."</strong></p>
+
+<figure style="margin:32px 0;text-align:center;">
+  <img src="../assets/oil-history.png" alt="Global oil price historical trend" style="width:100%;max-width:520px;opacity:0.85;border:1px solid var(--border);">
+  <figcaption style="font-size:12px;color:var(--text-muted);margin-top:8px;">The global oil market faces "the largest supply disruption in history" · © Wikimedia Commons</figcaption>
+</figure>
+<h3>Energy Markets</h3>
+<p>Between March 10 and 20, as Iran intensified strikes on Gulf energy infrastructure, Brent crude surged past <strong>$116 per barrel</strong>, with natural gas costs rising 24%. A Reuters poll showed analysts making "the largest upward revision to annual oil price forecasts on record."</p>
+
+<h3>Supply Chain Disruption</h3>
+<p>CNBC analysis noted that the Strait of Hormuz blockade affects far more than oil—metals, fertilizers, agricultural products, and other industries reliant on maritime shipping will all be impacted. <strong>"A guaranteed global recession"</strong> is no longer alarmist rhetoric.</p>
+
+<h3>Inflation and Recession Risk</h3>
+<p>Supply shortages are driving global inflation higher while economic growth slows—the specter of <strong>stagflation</strong> looms over the global economy. Many economists warn this could be the most severe energy shock since the 1970s oil crisis.</p>
+
+<h2>III. Each Side's Leverage</h2>
+
+<div class="compare">
+  <div class="compare-card">
+    <div class="compare-side us">United States 🇺🇸</div>
+    <div class="compare-point"><strong>Absolute military superiority</strong> — dominance in air, sea, and cyber domains</div>
+    <div class="compare-point"><strong>"Swift victory" has failed</strong> — decapitation did not trigger regime collapse</div>
+    <div class="compare-point"><strong>Domestic political pressure</strong> — midterm elections approaching</div>
+    <div class="compare-point"><strong>Economic blowback</strong> — surging oil prices impacting the US economy</div>
+    <div class="compare-point"><strong>Ground invasion decision</strong> — enormous risk; political cost potentially unbearable</div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-side iran">Iran 🇮🇷</div>
+    <div class="compare-point"><strong>Resilience beyond expectations</strong> — rapid power transition completed</div>
+    <div class="compare-point"><strong>The Hormuz card</strong> — choking the global economic lifeline</div>
+    <div class="compare-point"><strong>Asymmetric retaliation</strong> — sustained output via missiles, drones, and proxies</div>
+    <div class="compare-point"><strong>Civilian life in ruins</strong> — economy and infrastructure severely damaged</div>
+    <div class="compare-point"><strong>90 million people</strong> — a ground war would be America's nightmare</div>
+  </div>
+</div>
+
+<h2>IV. Great Power Positions</h2>
+
+<figure style="margin:32px 0;text-align:center;">
+  <img src="../assets/un-security-council.jpg" alt="UN Security Council chamber" style="width:100%;max-width:520px;opacity:0.85;border:1px solid var(--border);">
+  <figcaption style="font-size:12px;color:var(--text-muted);margin-top:8px;">The UN Security Council — the US-Israeli bypass of Security Council authorization has sparked international law controversy · © Wikimedia Commons</figcaption>
+</figure>
+<h3>China</h3>
+<p>China has taken a clear stance: advocating respect for national sovereignty, opposing regime change, and calling for a return to the negotiating table. It emphasizes that "the sovereignty, security, and territorial integrity of Iran and all Gulf states must be respected and must not be violated," and that "Middle Eastern affairs should be decided independently by regional nations."</p>
+
+<h3>Russia</h3>
+<p>Russia, itself deeply mired in the Ukraine conflict, has condemned the US position on the Iran crisis, though its actual influence is limited. The energy market turmoil does benefit Russian oil revenues in the short term.</p>
+
+<h3>Europe</h3>
+<p>Europe finds itself in the most awkward position—both an ally of the United States and a direct victim of the energy crisis. British military facilities were even struck by Iranian retaliation.</p>
+
+<h2>V. Where Does It Go from Here?</h2>
+
+<p>As of April 3, 2026, the war has lasted 35 days. <strong>Three possible trajectories:</strong></p>
+
+<div class="scenarios">
+  <div class="scenario">
+    <div class="scenario-prob prob-mid">Likelihood: Medium</div>
+    <div class="scenario-title">Prolonged War of Attrition</div>
+    <div class="scenario-desc">Airstrikes continue without ground invasion. Iran maintains asymmetric retaliation. The Strait of Hormuz remains semi-blockaded. Both sides wait for the other to break first. Multiple analysts consider this the most probable outcome.</div>
+  </div>
+  <div class="scenario">
+    <div class="scenario-prob prob-low">Likelihood: Low</div>
+    <div class="scenario-title">Negotiated Ceasefire</div>
+    <div class="scenario-desc">Iran accepts some form of ceasefire terms under economic and military pressure. However, Iran has explicitly denied requesting a ceasefire, calling US demands "maximalist and irrational." Trump claims "core objectives are nearing completion."</div>
+  </div>
+  <div class="scenario">
+    <div class="scenario-prob prob-high">Likelihood: Alert</div>
+    <div class="scenario-title">Ground Invasion Escalation</div>
+    <div class="scenario-desc">US ground troops are already in theater. If airstrikes fail to force Iran's capitulation, ground invasion remains on the table. But a country of 90 million could become a quagmire far worse than Iraq.</div>
+  </div>
+</div>
+
+<div class="callout blue">
+  <div class="callout-title">Analytical Assessment</div>
+  <p style="margin:0;color:var(--text-secondary)">Multiple analyses suggest that after the failure of the US-Israeli "swift victory" expectation, the conflict is drifting toward a protracted war of attrition. The United States faces midterm election pressure and economic blowback, eroding its resolve for sustained warfare. Iran, despite suffering massive damage, has demonstrated both political resilience and military retaliatory capability—a millennia-old civilization of nearly 90 million people will not surrender easily.<br><br>The history of the Middle East has repeatedly taught the world: <strong>military force is not the solution; resorting to arms only breeds new hatreds and incubates new crises</strong>.</p>
+</div>
+
+<h2>VI. The Numbers That Tell This War's Story</h2>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">35+</div>
+    <div class="dc-label">Days of Hostilities</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">8+</div>
+    <div class="dc-label">Nations Directly Involved</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">$116+</div>
+    <div class="dc-label">Oil Price/bbl</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value orange">5,000+</div>
+    <div class="dc-label">New US Troops Deployed</div>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="callout-title">Epilogue</div>
+  <p style="margin:0;color:var(--text-secondary);line-height:2">
+    The full picture of this war is still unfolding. Every day brings new strikes, new casualties, new signals of negotiation.<br><br>
+    What we can say with certainty: <strong>this war has changed the Middle East and is reshaping the world order.</strong> Every explosion in the Strait of Hormuz reverberates at every gas station and supermarket on the planet. Every child at the Minab school should never have become a casualty of geopolitical brinkmanship.<br><br>
+    When the dust of war finally settles, history will remember all of this. Until then, what we can do is record what is happening as objectively as possible.<br><br>
+    <em>This report will be updated continuously.</em>
+  </p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="chapter4-wildfire.html">← Chapter 4: Wildfire</a>
+  <a href="index.html">Table of Contents →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+  <div class="footer-note">
+    This report was independently researched, analyzed, and visualized by X-Agent. Human guidance and editorial review were provided.<br>
+    Data as of: April 3, 2026. For research reference only; does not represent any political stance.<br><br>
+    © 2026 Stonehenge AI Technology · X-Agent Deep Investigation
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const ctx = document.getElementById('priceChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Flour', 'Meat', 'Bottled Water', 'Batteries', 'Gasoline', 'Medicine'],
+        datasets: [{
+          label: 'Price Increase (%)',
+          data: [986, 817, 650, 420, 350, 280],
+          backgroundColor: [
+            'rgba(201,64,64,0.8)',
+            'rgba(201,64,64,0.7)',
+            'rgba(212,132,42,0.7)',
+            'rgba(212,132,42,0.6)',
+            'rgba(201,168,108,0.6)',
+            'rgba(201,168,108,0.5)'
+          ],
+          borderColor: [
+            '#c94040','#c94040','#d4842a','#d4842a','#c9a86c','#c9a86c'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1a1a25',
+            borderColor: '#2a2a35',
+            borderWidth: 1,
+            titleColor: '#c9a86c',
+            bodyColor: '#e8e6e1',
+            callbacks: {
+              label: function(c) { return '+' + c.parsed.x + '%'; }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: '#666', font: { size: 11, family: 'monospace' },
+              callback: function(v) { return '+' + v + '%'; }
+            },
+            grid: { color: 'rgba(42,42,53,0.5)' }
+          },
+          y: {
+            ticks: { color: '#9a9a9a', font: { size: 13 } },
+            grid: { display: false }
+          }
+        },
+        animation: { duration: 1200, easing: 'easeOutQuart' }
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Operation Epic Fury — The Persian Gulf Enigma</title>
+<style>
+:root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--bg-card-hover:#222233;--text-primary:#e8e6e1;--text-secondary:#9a9a9a;--text-muted:#666;--accent:#c9a86c;--accent-dim:#8a7040;--red:#c94040;--red-dim:rgba(201,64,64,0.15);--border:#2a2a35;--serif:'Playfair Display','Noto Serif SC','Source Han Serif CN',serif;--sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s}.nav a:hover{color:var(--accent)}.nav-title{font-family:var(--serif);font-size:14px;color:var(--text-secondary)}
+.ch-hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}.ch-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,64,64,0.06) 0%,transparent 60%);z-index:1;pointer-events:none}.ch-num{font-family:var(--serif);font-size:6rem;color:var(--red);opacity:0.3;line-height:1}.ch-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin:16px 0}.ch-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:560px}
+.content{max-width:720px;margin:0 auto;padding:0 24px 100px}.content h2{font-family:var(--serif);font-size:1.5rem;margin:64px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border)}.content h3{font-family:var(--serif);font-size:1.15rem;margin:40px 0 16px;color:var(--accent)}.content p{margin-bottom:20px;color:var(--text-secondary);font-size:15px;line-height:1.9}.content p strong{color:var(--text-primary);font-weight:600}
+.callout{background:var(--bg-card);border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:14px}.callout.danger{border-left-color:var(--red)}.callout-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}.callout.danger .callout-title{color:var(--red)}
+.data-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}.dc-item{background:var(--bg-secondary);padding:20px 16px;text-align:center}.dc-value{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent)}.dc-value.red{color:var(--red)}.dc-label{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* HOUR-BY-HOUR */
+.hour-tl{margin:40px 0;position:relative;padding-left:40px}
+.hour-tl::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--accent-dim),var(--red))}
+.hour-item{position:relative;margin-bottom:28px}
+.hour-item::before{content:'';position:absolute;left:-30px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg-primary);border:2px solid var(--accent)}
+.hour-item.critical::before{border-color:var(--red);background:var(--red);box-shadow:0 0 10px rgba(201,64,64,0.4)}
+.hour-time{font-family:var(--mono);font-size:13px;color:var(--red);font-weight:700;margin-bottom:4px}
+.hour-title{font-weight:600;font-size:15px;margin-bottom:4px}
+.hour-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* CASUALTY TABLE */
+.cas-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.cas-card{background:var(--bg-secondary);border:1px solid var(--border);padding:20px}
+.cas-side{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.cas-side.us{color:#4a90d9}
+.cas-side.iran{color:var(--red)}
+.cas-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary)}
+.cas-row:last-child{border-bottom:none}
+.cas-row .val{color:var(--text-primary);font-weight:600}
+
+.ch-nav{display:flex;justify-content:space-between;padding:40px 24px;max-width:720px;margin:0 auto;border-top:1px solid var(--border)}.ch-nav a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s}.ch-nav a:hover{color:var(--accent)}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}.footer-brand{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:8px}
+@media(max-width:640px){.data-card{grid-template-columns:repeat(2,1fr)}.cas-grid{grid-template-columns:1fr}.hour-tl{padding-left:32px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="chapter2-abyss.html">← Previous Chapter</a>
+  <span class="nav-title">Chapter 3: Operation Epic Fury</span>
+  <a href="chapter4-wildfire.html">Next Chapter →</a>
+</nav>
+
+<section class="ch-hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.4) 0%, rgba(10,10,15,0.6) 40%, rgba(10,10,15,0.9) 80%, #0a0a0f 100%), url('../assets/uss-lincoln.jpg') center/cover no-repeat;">
+  <div class="ch-num">III</div>
+  <div class="ch-title">Operation Epic Fury</div>
+  <div class="ch-subtitle">February 28, 2026 — Operation Epic Fury<br>72 hours of seismic upheaval from Tehran to Kuwait</div>
+</section>
+
+<article class="content">
+
+<h2>I. D-Day: February 28</h2>
+
+<figure style="margin:0 0 32px;text-align:center;">
+  <img src="../assets/uss-lincoln.jpg" alt="US carrier strike group" style="width:100%;max-width:540px;opacity:0.85;border:1px solid var(--border);">
+  <figcaption style="font-size:12px;color:var(--text-muted);margin-top:8px;">Operation Epic Fury: US carrier strike group assembled in the Persian Gulf · Illustration</figcaption>
+</figure>
+<p>In the early hours of February 28, 2026, having completed its Middle East military deployment, the United States launched a massive joint military strike with Israel against Iran, codenamed <strong>"Operation Epic Fury."</strong> It was the largest US military operation in the Middle East since the 2003 Iraq War.</p>
+
+<h3>Hour-by-Hour Reconstruction</h3>
+
+<div class="hour-tl">
+  <div class="hour-item critical">
+    <div class="hour-time">02:00 — First Wave</div>
+    <div class="hour-title">Joint Airstrikes Begin</div>
+    <div class="hour-desc">US-Israeli joint airstrikes targeted Iranian government and military installations across multiple provinces.</div>
+  </div>
+  <div class="hour-item critical">
+    <div class="hour-time">02:15 — Decapitation Strike</div>
+    <div class="hour-title">Supreme Leader Khamenei Killed</div>
+    <div class="hour-desc">Precision-guided munitions struck Khamenei's Tehran office. Iran's Supreme Leader was killed, along with the Defense Minister, Chief of General Staff, and IRGC Commander. A single strike obliterated Iran's entire top military-political command chain.</div>
+  </div>
+  <div class="hour-item">
+    <div class="hour-time">03:00 — Iranian Retaliation</div>
+    <div class="hour-title">Full-Scale Counterattack Launched</div>
+    <div class="hour-desc">Iran's surviving military forces immediately began retaliating, launching missiles at Israel, US military installations in the Middle East, and allied targets.</div>
+  </div>
+  <div class="hour-item">
+    <div class="hour-time">Daytime — Sustained Strikes</div>
+    <div class="hour-title">153 Cities Hit</div>
+    <div class="hour-desc">First-day strikes covered 153 cities across all 31 Iranian provinces, targeting military bases, government facilities, and air defense systems.</div>
+  </div>
+  <div class="hour-item critical">
+    <div class="hour-time">Daytime — Minab</div>
+    <div class="hour-title">Elementary School Bombed</div>
+    <div class="hour-desc">In the southern Iranian city of Minab, a girls' elementary school was hit during the airstrikes. Iranian officials reported 168–175 female students and staff killed. It became one of the most controversial and harrowing incidents of the war.</div>
+  </div>
+</div>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">153</div>
+    <div class="dc-label">Cities Struck (Day 1)</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">31</div>
+    <div class="dc-label">Provinces Affected</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">175</div>
+    <div class="dc-label">Minab School Deaths</div>
+  </div>
+</div>
+
+<h2>II. Iran Strikes Back</h2>
+
+<p>Despite the elimination of its top leadership in a single blow, Iranian military forces <strong>launched large-scale retaliation within hours</strong>—demonstrating a degree of distributed resilience within its command structure.</p>
+
+<p>Iran's retaliatory targets included:</p>
+<ul style="color:var(--text-secondary);font-size:15px;margin:0 0 20px 24px;line-height:2">
+  <li><strong>Israeli homeland</strong> — sustained ballistic missile and drone attacks</li>
+  <li><strong>US bases in the Middle East</strong> — facilities in Kuwait, Bahrain, Qatar, and Saudi Arabia</li>
+  <li><strong>Strait of Hormuz</strong> — attacks on commercial oil tankers in an attempt to blockade the strait</li>
+  <li><strong>Gulf states</strong> — Saudi Arabia, UAE, and others viewed as US allies</li>
+</ul>
+
+<h2>III. The First Week: A Staggering 72 Hours</h2>
+
+<figure style="margin:32px 0;text-align:center;">
+  <img src="../assets/f15e.jpg" alt="Fighter jets taking off" style="width:100%;max-width:520px;opacity:0.85;border:1px solid var(--border);">
+  <figcaption style="font-size:12px;color:var(--text-muted);margin-top:8px;">Air campaign: US-Israeli coalition forces deployed massive fighter sorties · Illustration</figcaption>
+</figure>
+<h3>March 1 — First US Military Deaths</h3>
+
+<p>An Iranian drone struck the US military base at Shuaiba Port in Kuwait, <strong>killing 6 American soldiers</strong>—the first US military fatalities of the conflict. On the same day, three US F-15 fighter jets were downed by Kuwaiti air defense systems in a friendly fire incident.</p>
+
+<p>Also on this day, the first commercial oil tankers were struck by missiles in the Strait of Hormuz, signaling Iran's formal initiation of its strategy to <strong>blockade the world's most critical oil transit route</strong>.</p>
+
+<h3>March 2 — Hezbollah Opens a Second Front</h3>
+
+<p>Lebanese Hezbollah fired rockets into northern Israel, claiming retaliation for months of sustained Israeli airstrikes on Lebanon. Israel immediately intensified its strikes on Lebanon, including a new round of Beirut airstrikes and ground incursion operations.</p>
+
+<h3>March 4 — Iranian Frigate Sunk</h3>
+
+<p>A US submarine sank the Iranian naval frigate "Dena" off the coast of Sri Lanka, <strong>killing at least 104 crew members</strong>. The battlefield had expanded from the Persian Gulf to the Indian Ocean.</p>
+
+<p>On the same day, Israel issued an "urgent evacuation warning" to all residents south of the Litani River in southern Lebanon.</p>
+
+<h3>March 7 — Environmental Catastrophe</h3>
+
+<p>Israel struck multiple oil storage facilities in Tehran and other locations, releasing large quantities of toxic substances into urban areas. Iran characterized the attack as "destroying the environment and seriously threatening lives," marking the conflict's entry into a <strong>"dangerous new phase."</strong></p>
+
+<div class="callout danger">
+  <div class="callout-title">First Week Damage Assessment</div>
+  <p style="margin:0;color:var(--text-secondary)">
+    <strong>Iran:</strong> Supreme Leader + multiple core military-political leaders killed; 1,300+ dead, 5,000+ wounded (official 9-day figures); nuclear facilities, military bases, and civilian infrastructure extensively destroyed<br><br>
+    <strong>United States:</strong> 6 soldiers killed in Kuwait; 3 F-15s lost to friendly fire; multiple Middle East military installations hit by missiles<br><br>
+    <strong>Global:</strong> Commercial shipping in the Strait of Hormuz disrupted; oil prices surging sharply; airspace closures across multiple countries
+  </p>
+</div>
+
+<h2>IV. Birth of a New Leader</h2>
+
+<p><strong>On March 8</strong>, just eight days after the Supreme Leader's assassination, Iran's Assembly of Experts elected <strong>Mojtaba Khamenei</strong>—the slain Supreme Leader's son—as the new Supreme Leader. His candidacy reportedly had the support of the Islamic Revolutionary Guard Corps.</p>
+
+<p>The speed of this power transition far exceeded outside expectations, sending a powerful signal: <strong>the US-Israeli strategic objective of achieving rapid regime change through "decapitation" had essentially failed</strong>.</p>
+
+<div class="callout">
+  <div class="callout-title">Analysis</div>
+  <p style="margin:0;color:var(--text-secondary)">The swift selection of a new leader demonstrated the resilience of Iran's political system. The IRGC played a central stabilizing role during the crisis, serving as both the backbone of military strength and the guarantor of political succession. The US-Israeli script of "decapitation → chaos → regime collapse" did not materialize.</p>
+</div>
+
+<h2>V. A War Planned at the Negotiating Table</h2>
+
+<p>Looking back at the context of the war's outbreak, one fact is inescapable:</p>
+
+<p><strong>This war was launched during active nuclear negotiations.</strong></p>
+
+<p>On February 6, both sides had just resumed nuclear talks in Muscat. On February 25, Iran's Foreign Minister publicly stated that a "historic deal was within reach." Three days later, bombs fell on Tehran.</p>
+
+<p>An analysis published in Qiushi Journal noted: "The United States and Israel, without UN Security Council authorization, attacked and killed Iran's Supreme Leader, deliberately provoking a war against Iran. This is a war that should never have happened."</p>
+
+<p>From the perspective of international law, launching a surprise attack during peace negotiations, waging war against a sovereign nation without UN Security Council authorization, and openly assassinating a head of state—these actions constitute <strong>grave violations of international law and the UN Charter</strong>.</p>
+
+<div class="callout">
+  <div class="callout-title">Chapter Summary</div>
+  <p style="margin:0;color:var(--text-secondary)">The first week of Operation Epic Fury laid bare the most brutal dimensions of modern warfare: precision decapitation strikes, mass civilian casualties, environmental catastrophe, and simultaneous naval blockade. Iran lost its Supreme Leader and core military-political leadership but swiftly completed a power transition. US-Israeli expectations of a "swift victory" began unraveling from the very first week—Iran did not collapse; it chose total resistance.</p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="chapter2-abyss.html">← Chapter 2: Descent into the Abyss</a>
+  <a href="chapter4-wildfire.html">Chapter 4: Wildfire →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
