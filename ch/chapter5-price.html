@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第五章：代价与迷局 — 波斯湾迷局</title>
+<style>
+:root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--bg-card-hover:#222233;--text-primary:#e8e6e1;--text-secondary:#9a9a9a;--text-muted:#666;--accent:#c9a86c;--accent-dim:#8a7040;--red:#c94040;--red-dim:rgba(201,64,64,0.15);--orange:#d4842a;--blue:#4a90d9;--border:#2a2a35;--serif:'Playfair Display','Noto Serif SC','Source Han Serif CN',serif;--sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s}.nav a:hover{color:var(--accent)}.nav-title{font-family:var(--serif);font-size:14px;color:var(--text-secondary)}
+.ch-hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}.ch-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 50%,rgba(74,144,217,0.06) 0%,transparent 60%);pointer-events:none}.ch-num{font-family:var(--serif);font-size:6rem;color:var(--blue);opacity:0.3;line-height:1}.ch-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin:16px 0}.ch-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:560px}
+.content{max-width:720px;margin:0 auto;padding:0 24px 100px}.content h2{font-family:var(--serif);font-size:1.5rem;margin:64px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border)}.content h3{font-family:var(--serif);font-size:1.15rem;margin:40px 0 16px;color:var(--accent)}.content p{margin-bottom:20px;color:var(--text-secondary);font-size:15px;line-height:1.9}.content p strong{color:var(--text-primary);font-weight:600}
+.callout{background:var(--bg-card);border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:14px}.callout.danger{border-left-color:var(--red)}.callout.blue{border-left-color:var(--blue)}.callout-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}.callout.danger .callout-title{color:var(--red)}.callout.blue .callout-title{color:var(--blue)}
+.data-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}.dc-item{background:var(--bg-secondary);padding:20px 16px;text-align:center}.dc-value{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent)}.dc-value.red{color:var(--red)}.dc-value.orange{color:var(--orange)}.dc-label{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* COMPARISON */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.compare-card{background:var(--bg-secondary);border:1px solid var(--border);padding:20px}
+.compare-side{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.compare-side.us{color:var(--blue)}
+.compare-side.iran{color:var(--red)}
+.compare-point{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary)}
+.compare-point:last-child{border-bottom:none}
+
+/* SCENARIO */
+.scenarios{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:32px 0}
+.scenario{background:var(--bg-secondary);border:1px solid var(--border);padding:24px;position:relative}
+.scenario-prob{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:11px;padding:2px 8px}
+.prob-high{background:var(--red-dim);color:var(--red)}
+.prob-mid{background:rgba(212,132,42,0.15);color:var(--orange)}
+.prob-low{background:rgba(74,144,217,0.15);color:var(--blue)}
+.scenario-title{font-family:var(--serif);font-size:1rem;font-weight:600;margin-bottom:8px}
+.scenario-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+/* CHART BAR */
+.bar-chart{margin:32px 0}
+.bar-row{display:flex;align-items:center;margin-bottom:12px;gap:12px}
+.bar-label{width:100px;font-size:12px;color:var(--text-muted);text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:24px;background:var(--bg-secondary);position:relative;overflow:hidden}
+.bar-fill{height:100%;position:absolute;left:0;top:0;transition:width 1s ease}
+.bar-fill.red{background:linear-gradient(90deg,var(--red),rgba(201,64,64,0.5))}
+.bar-fill.orange{background:linear-gradient(90deg,var(--orange),rgba(212,132,42,0.5))}
+.bar-fill.accent{background:linear-gradient(90deg,var(--accent),rgba(201,168,108,0.5))}
+.bar-value{font-family:var(--mono);font-size:12px;color:var(--text-secondary);width:60px;flex-shrink:0}
+
+.ch-nav{display:flex;justify-content:space-between;padding:40px 24px;max-width:720px;margin:0 auto;border-top:1px solid var(--border)}.ch-nav a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s}.ch-nav a:hover{color:var(--accent)}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}.footer-brand{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:8px}.footer-note{font-size:12px;color:var(--text-muted);max-width:480px;margin:0 auto;line-height:1.6}
+@media(max-width:640px){.data-card{grid-template-columns:repeat(2,1fr)}.compare{grid-template-columns:1fr}.scenarios{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="chapter4-wildfire.html">← 上一章</a>
+  <span class="nav-title">第五章：代价与迷局</span>
+  <a href="index.html">返回目录</a>
+</nav>
+
+<section class="ch-hero">
+  <div class="ch-num">伍</div>
+  <div class="ch-title">代价与迷局</div>
+  <div class="ch-subtitle">当战争的账单开始到来，没有人是赢家<br>经济冲击、人道灾难、大国博弈与不确定的未来</div>
+</section>
+
+<article class="content">
+
+<h2>一、伊朗的代价：民生崩溃</h2>
+
+<p>战争对伊朗经济和民生造成了毁灭性打击。美以的打击不仅限于军事目标，还系统性地摧毁了<strong>道路桥梁、港口、储油设施、炼油厂、海水淡化厂、医院、学校</strong>等经济和民生基础设施。</p>
+
+<h3>物价飞涨</h3>
+
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">面粉</div>
+    <div class="bar-track"><div class="bar-fill red" style="width:98%"></div></div>
+    <div class="bar-value">+986%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">肉类</div>
+    <div class="bar-track"><div class="bar-fill red" style="width:82%"></div></div>
+    <div class="bar-value">+817%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">瓶装水</div>
+    <div class="bar-track"><div class="bar-fill orange" style="width:65%"></div></div>
+    <div class="bar-value">+650%</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">通胀率</div>
+    <div class="bar-track"><div class="bar-fill accent" style="width:45%"></div></div>
+    <div class="bar-value">45%</div>
+  </div>
+</div>
+
+<p>里亚尔暴跌，食品、药品、汽油、电池价格大幅上涨。面粉涨幅接近十倍。<strong>战争使长期制裁下已经脆弱的经济加速崩溃</strong>。</p>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">1,300+</div>
+    <div class="dc-label">死亡（前9天官方数据）</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">5,000+</div>
+    <div class="dc-label">受伤</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value orange">45%</div>
+    <div class="dc-label">通货膨胀率</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">986%</div>
+    <div class="dc-label">面粉涨幅</div>
+  </div>
+</div>
+
+<div class="callout danger">
+  <div class="callout-title">人道灾难</div>
+  <p style="margin:0;color:var(--text-secondary)">打击基础设施的目的，用美以自己的话说，是"摧毁伊朗保障民生的基本能力，瓦解民众的抵抗意志"。海水淡化厂、医院和学校不是军事目标——它们是生存基础。当面粉涨了十倍，受伤的人没有医院可去，普通人的战争才真正开始。</p>
+</div>
+
+<h2>二、全球经济冲击</h2>
+
+<p>这场战争对全球经济的影响已经远超预期。IEA将霍尔木兹海峡的中断定性为<strong>"全球石油市场史上最大供应中断"</strong>。</p>
+
+<h3>能源市场</h3>
+<p>3月10日至20日期间，伊朗加大对海湾能源基础设施的打击力度，布伦特原油价格飙升至每桶<strong>116美元以上</strong>，天然气成本上涨24%。路透社民调显示，分析师对年度油价预测做出了"有记录以来最大幅度的上调"。</p>
+
+<h3>供应链冲击</h3>
+<p>CNBC分析指出，霍尔木兹海峡的封锁影响的不仅是石油——金属、化肥、农产品等依赖海运的行业都将受到冲击。<strong>"保证性地引发全球经济衰退"</strong>不再是危言耸听。</p>
+
+<h3>通胀与衰退风险</h3>
+<p>供应短缺推动全球通胀走高，同时经济增长放缓——<strong>滞胀</strong>（stagflation）的幽灵正在笼罩全球经济。许多经济学家警告，这可能是自1970年代石油危机以来最严重的能源冲击。</p>
+
+<h2>三、各方筹码</h2>
+
+<div class="compare">
+  <div class="compare-card">
+    <div class="compare-side us">美国 🇺🇸</div>
+    <div class="compare-point"><strong>军事优势绝对</strong> — 空中/海上/网络全面碾压</div>
+    <div class="compare-point"><strong>"速胜"落空</strong> — 斩首未能导致政权崩溃</div>
+    <div class="compare-point"><strong>国内政治压力</strong> — 中期选举临近</div>
+    <div class="compare-point"><strong>经济反噬</strong> — 油价飙升冲击本国经济</div>
+    <div class="compare-point"><strong>地面入侵决策</strong> — 风险巨大，政治代价可能无法承受</div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-side iran">伊朗 🇮🇷</div>
+    <div class="compare-point"><strong>韧性超预期</strong> — 权力交接快速完成</div>
+    <div class="compare-point"><strong>霍尔木兹牌</strong> — 掐住全球经济咽喉</div>
+    <div class="compare-point"><strong>不对称反击</strong> — 导弹、无人机、代理人持续输出</div>
+    <div class="compare-point"><strong>民生崩溃</strong> — 经济基础和基础设施严重受损</div>
+    <div class="compare-point"><strong>9000万人口</strong> — 地面战是美国的噩梦</div>
+  </div>
+</div>
+
+<h2>四、大国立场</h2>
+
+<h3>中国</h3>
+<p>中国态度鲜明：主张尊重国家主权，反对政权更迭，呼吁回到谈判桌。强调"伊朗以及海湾地区各国的主权、安全和领土完整都应得到尊重，不容侵犯"，"中东事务应该由地区各国自主决定"。</p>
+
+<h3>俄罗斯</h3>
+<p>俄罗斯在自身深陷乌克兰战事的背景下，对美伊冲突持谴责美国立场，但实际影响力有限。能源市场的混乱在短期内有利于俄罗斯的石油收入。</p>
+
+<h3>欧洲</h3>
+<p>欧洲面临最尴尬的处境——既是美国的盟友，又是能源危机的直接受害者。英国军事设施甚至遭到了伊朗的打击。</p>
+
+<h2>五、走向何方？</h2>
+
+<p>截至2026年4月3日，战争已持续35天。<strong>三个可能的走向：</strong></p>
+
+<div class="scenarios">
+  <div class="scenario">
+    <div class="scenario-prob prob-mid">可能性：中</div>
+    <div class="scenario-title">长期消耗战</div>
+    <div class="scenario-desc">空袭持续，但不地面入侵。伊朗继续不对称反击。霍尔木兹海峡半封锁。双方都在等对方先撑不住。这是多方分析认为最可能的走向。</div>
+  </div>
+  <div class="scenario">
+    <div class="scenario-prob prob-low">可能性：低</div>
+    <div class="scenario-title">谈判停火</div>
+    <div class="scenario-desc">伊朗在经济压力和军事打击下接受某种形式的停火条件。但伊朗目前明确否认请求停火，称美方要求"最大化且不理性"。特朗普声称"核心目标接近完成"。</div>
+  </div>
+  <div class="scenario">
+    <div class="scenario-prob prob-high">可能性：警惕</div>
+    <div class="scenario-title">地面入侵升级</div>
+    <div class="scenario-desc">美军地面部队已到达。如果空袭无法迫使伊朗屈服，地面入侵的选项就在桌上。但9000万人口的国家，可能成为比伊拉克更大的泥潭。</div>
+  </div>
+</div>
+
+<div class="callout blue">
+  <div class="callout-title">分析判断</div>
+  <p style="margin:0;color:var(--text-secondary)">多方分析认为，美以"速胜"预期落空后，冲突正走向长期消耗战。美国面临中期选举压力和经济反噬，持续战争的决心在动摇。伊朗虽然遭受重创，但展现出了政治体制的韧性和军事反击的能力——近9000万人口的千年文明古国不会轻易投降。<br><br>中东的历史反复告诉世人：<strong>武力不是解决问题的办法，兵戎相见只会增添新的仇恨，酝酿新的危机</strong>。</p>
+</div>
+
+<h2>六、一些数字，讲述这场战争</h2>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">35+</div>
+    <div class="dc-label">天战事持续</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">8+</div>
+    <div class="dc-label">国家直接卷入</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">$116+</div>
+    <div class="dc-label">油价/桶</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value orange">5,000+</div>
+    <div class="dc-label">美军新增部署</div>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="callout-title">结语</div>
+  <p style="margin:0;color:var(--text-secondary);line-height:2">
+    这场战争的全貌仍在展开。每一天都有新的打击、新的伤亡、新的谈判信号。<br><br>
+    我们能确定的是：<strong>这场战争改变了中东，也正在改变世界秩序。</strong>霍尔木兹海峡的每一次爆炸都在全球每一个加油站产生回响。米纳布学校的每一个孩子都不应该成为地缘政治博弈的代价。<br><br>
+    当战争的尘埃最终落定，历史会记住这一切。而在此之前，我们能做的，是尽可能客观地记录正在发生的事实。<br><br>
+    <em>本报告将持续更新。</em>
+  </p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="chapter4-wildfire.html">← 第四章：燎原之火</a>
+  <a href="index.html">返回目录 →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+  <div class="footer-note">
+    本报告由 X-Agent 自主完成调研、分析与可视化。人类提供方向指导与审校。<br>
+    数据截止：2026年4月3日。内容仅供研究参考，不代表任何政治立场。<br><br>
+    © 2026 Stonehenge AI Technology · X-Agent Deep Investigation
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US-Iran War: Deep Investigation Report — X-Agent</title>
+<style>
+  body { margin: 0; background: #0a0a0f; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: system-ui, sans-serif; }
+  .redirect { color: #888; font-size: 14px; }
+  a { color: #c9a86c; }
+</style>
+<script>
+  (function() {
+    var lang = localStorage.getItem('report-lang');
+    if (!lang) {
+      lang = (navigator.language || navigator.userLanguage || 'zh').toLowerCase();
+      lang = 'ch'; // Default to Chinese; EN version coming soon
+    }
+    window.location.replace(lang + '/index.html');
+  })();
+</script>
+</head>
+<body>
+  <div class="redirect">
+    Redirecting... <a href="ch/index.html">中文</a> | <a href="en/index.html">English</a>
+  </div>
+</body>
+</html>

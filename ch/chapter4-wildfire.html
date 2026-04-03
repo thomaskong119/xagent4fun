@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第四章：燎原之火 — 波斯湾迷局</title>
+<style>
+:root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--bg-card-hover:#222233;--text-primary:#e8e6e1;--text-secondary:#9a9a9a;--text-muted:#666;--accent:#c9a86c;--accent-dim:#8a7040;--red:#c94040;--red-dim:rgba(201,64,64,0.15);--orange:#d4842a;--border:#2a2a35;--serif:'Playfair Display','Noto Serif SC','Source Han Serif CN',serif;--sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s}.nav a:hover{color:var(--accent)}.nav-title{font-family:var(--serif);font-size:14px;color:var(--text-secondary)}
+.ch-hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}.ch-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,132,42,0.08) 0%,transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(201,64,64,0.08) 0%,transparent 50%);pointer-events:none}.ch-num{font-family:var(--serif);font-size:6rem;color:var(--orange);opacity:0.3;line-height:1}.ch-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin:16px 0}.ch-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:560px}
+.content{max-width:720px;margin:0 auto;padding:0 24px 100px}.content h2{font-family:var(--serif);font-size:1.5rem;margin:64px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border)}.content h3{font-family:var(--serif);font-size:1.15rem;margin:40px 0 16px;color:var(--accent)}.content p{margin-bottom:20px;color:var(--text-secondary);font-size:15px;line-height:1.9}.content p strong{color:var(--text-primary);font-weight:600}
+.callout{background:var(--bg-card);border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:14px}.callout.danger{border-left-color:var(--red)}.callout.warning{border-left-color:var(--orange)}.callout-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}.callout.danger .callout-title{color:var(--red)}.callout.warning .callout-title{color:var(--orange)}
+.data-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}.dc-item{background:var(--bg-secondary);padding:20px 16px;text-align:center}.dc-value{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent)}.dc-value.red{color:var(--red)}.dc-value.orange{color:var(--orange)}.dc-label{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* THEATER MAP */
+.theater-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:32px 0}
+.theater-card{background:var(--bg-secondary);border:1px solid var(--border);padding:20px;position:relative;overflow:hidden}
+.theater-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+.theater-card.hot::before{background:var(--red)}
+.theater-card.warm::before{background:var(--orange)}
+.theater-card.cool::before{background:var(--accent)}
+.theater-name{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.theater-card.hot .theater-name{color:var(--red)}
+.theater-card.warm .theater-name{color:var(--orange)}
+.theater-card.cool .theater-name{color:var(--accent)}
+.theater-title{font-weight:600;font-size:15px;margin-bottom:8px}
+.theater-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+/* WEEK BY WEEK */
+.week{margin:40px 0;padding:24px;background:var(--bg-secondary);border:1px solid var(--border)}
+.week-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.week-num{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--accent)}
+.week-date{font-size:12px;color:var(--text-muted)}
+.week-events{list-style:none}
+.week-events li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-secondary);display:flex;gap:10px}
+.week-events li:last-child{border-bottom:none}
+.week-events .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;padding:2px 6px;flex-shrink:0;margin-top:2px;height:fit-content}
+.tag-strike{background:var(--red-dim);color:var(--red)}
+.tag-retali{background:rgba(212,132,42,0.15);color:var(--orange)}
+.tag-diplo{background:rgba(74,144,217,0.15);color:#4a90d9}
+.tag-econ{background:var(--accent-glow,rgba(201,168,108,0.15));color:var(--accent)}
+
+.ch-nav{display:flex;justify-content:space-between;padding:40px 24px;max-width:720px;margin:0 auto;border-top:1px solid var(--border)}.ch-nav a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s}.ch-nav a:hover{color:var(--accent)}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}.footer-brand{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:8px}
+@media(max-width:640px){.data-card{grid-template-columns:repeat(2,1fr)}.theater-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="chapter3-epic-fury.html">← 上一章</a>
+  <span class="nav-title">第四章：燎原之火</span>
+  <a href="chapter5-price.html">下一章 →</a>
+</nav>
+
+<section class="ch-hero">
+  <div class="ch-num">肆</div>
+  <div class="ch-title">燎原之火</div>
+  <div class="ch-subtitle">从波斯湾到印度洋，从黎巴嫩到也门<br>一场区域战争如何演变为全球性危机</div>
+</section>
+
+<article class="content">
+
+<h2>一、多战场态势</h2>
+
+<p>美伊战争从开战第一天起就不是两个国家之间的战争。它卷入了整个中东，并向全球蔓延。到3月底，<strong>至少有8个以上的国家和地区直接受到军事打击或卷入冲突</strong>。</p>
+
+<div class="theater-grid">
+  <div class="theater-card hot">
+    <div class="theater-name">🔥 伊朗本土</div>
+    <div class="theater-title">主战场</div>
+    <div class="theater-desc">美以持续空袭军事、政治、经济基础设施。31省153城遭袭。伊朗防空体系被大幅削弱。</div>
+  </div>
+  <div class="theater-card hot">
+    <div class="theater-name">🔥 霍尔木兹海峡</div>
+    <div class="theater-title">石油咽喉</div>
+    <div class="theater-desc">伊朗攻击商业油轮试图封锁海峡。全球1/5石油运输受阻，引发史上最大能源供应中断。</div>
+  </div>
+  <div class="theater-card hot">
+    <div class="theater-name">🔥 以色列</div>
+    <div class="theater-title">四面受敌</div>
+    <div class="theater-desc">伊朗导弹+真主党火箭弹+胡塞弹道导弹，以色列面临三个方向的同时攻击。</div>
+  </div>
+  <div class="theater-card warm">
+    <div class="theater-name">⚡ 黎巴嫩</div>
+    <div class="theater-title">第二战线</div>
+    <div class="theater-desc">真主党全面参战。以色列地面入侵推进至利塔尼河，宣布将摧毁南黎巴嫩房屋。</div>
+  </div>
+  <div class="theater-card warm">
+    <div class="theater-name">⚡ 海湾国家</div>
+    <div class="theater-title">波及面</div>
+    <div class="theater-desc">伊朗打击沙特、巴林、阿联酋、科威特、卡塔尔、阿曼境内或附近的美军设施和盟友目标。</div>
+  </div>
+  <div class="theater-card cool">
+    <div class="theater-name">🌊 印度洋</div>
+    <div class="theater-title">远洋扩展</div>
+    <div class="theater-desc">美军击沉伊朗护卫舰（斯里兰卡海域）；伊朗导弹疑似攻击迪戈加西亚美军基地（距伊朗2500英里）。</div>
+  </div>
+</div>
+
+<h2>二、逐周战事推进</h2>
+
+<div class="week">
+  <div class="week-header">
+    <div class="week-num">WEEK 2 · 3.7—3.13</div>
+    <div class="week-date">第二周</div>
+  </div>
+  <ul class="week-events">
+    <li><span class="tag tag-strike">打击</span>以色列打击德黑兰储油设施，释放有毒物质，伊朗称"危险新阶段"</li>
+    <li><span class="tag tag-diplo">政治</span>穆杰塔巴·哈梅内伊（3.8）被选为新最高领袖，权力交接完成</li>
+    <li><span class="tag tag-strike">打击</span>美军KC-135加油机在伊拉克西部坠毁，6名机组人员阵亡</li>
+  </ul>
+</div>
+
+<div class="week">
+  <div class="week-header">
+    <div class="week-num">WEEK 3 · 3.14—3.20</div>
+    <div class="week-date">第三周</div>
+  </div>
+  <ul class="week-events">
+    <li><span class="tag tag-strike">斩首</span>以色列在德黑兰击杀伊朗国安委秘书拉里贾尼（3.17）——又一名核心领导人</li>
+    <li><span class="tag tag-strike">能源</span>以色列打击南帕斯气田（3.18）——伊朗-卡塔尔共享气田，信号：能源基础设施不再是禁区</li>
+    <li><span class="tag tag-retali">远程</span>伊朗导弹疑似攻击迪戈加西亚（3.20）——距伊朗2500英里，展示远程打击能力</li>
+  </ul>
+</div>
+
+<div class="week">
+  <div class="week-header">
+    <div class="week-num">WEEK 4 · 3.21—3.27</div>
+    <div class="week-date">第四周</div>
+  </div>
+  <ul class="week-events">
+    <li><span class="tag tag-diplo">最后通牒</span>特朗普发出48小时最后通牒（3.22）：开放霍尔木兹海峡，否则打击能源设施</li>
+    <li><span class="tag tag-strike">经济战</span>空袭伊朗三座大型钢铁厂（3.24）——战略转向打击经济基础</li>
+    <li><span class="tag tag-retali">沙特</span>伊朗无人机和导弹攻击沙特王子苏丹空军基地（3.24），损坏多架美军飞机含E-3预警机</li>
+    <li><span class="tag tag-econ">黎巴嫩</span>以色列国防部长宣布将在南黎巴嫩实施"拉法和拜特哈嫩模式"——即加沙式摧毁</li>
+  </ul>
+</div>
+
+<div class="week">
+  <div class="week-header">
+    <div class="week-num">WEEK 5 · 3.28—4.3</div>
+    <div class="week-date">第五周（进行中）</div>
+  </div>
+  <ul class="week-events">
+    <li><span class="tag tag-retali">也门</span>胡塞武装首次向以色列发射弹道导弹（3.28）——又一条战线开启</li>
+    <li><span class="tag tag-strike">增兵</span>3,500名美军海军陆战队员抵达中东（3.28）；82空降师1,500名士兵预计跟进</li>
+    <li><span class="tag tag-diplo">演讲</span>特朗普全国讲话（4.1）声称"核心目标接近完成"，"再打2-3周"</li>
+    <li><span class="tag tag-diplo">否认</span>伊朗否认请求停火，称特朗普的要求"最大化且不理性"</li>
+    <li><span class="tag tag-econ">占领</span>以色列宣布将占领黎巴嫩至利塔尼河（3.31），阻止居民返回</li>
+  </ul>
+</div>
+
+<h2>三、霍尔木兹海峡：扼住世界的咽喉</h2>
+
+<p>在所有战场中，<strong>霍尔木兹海峡的封锁</strong>产生了最深远的全球影响。</p>
+
+<p>这条宽度最窄处仅33公里的水道，承载着全球约<strong>五分之一的石油运输</strong>和大量液化天然气贸易。从战争第一天起，伊朗就开始攻击通过海峡的商业船只，试图切断这条全球经济的生命线。</p>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value orange">1/5</div>
+    <div class="dc-label">全球石油经此运输</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">$116+</div>
+    <div class="dc-label">布伦特原油/桶</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value orange">24%</div>
+    <div class="dc-label">天然气价格涨幅</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">史上最大</div>
+    <div class="dc-label">IEA称供应中断</div>
+  </div>
+</div>
+
+<p>国际能源署（IEA）将此次中断定性为<strong>"全球石油市场史上最大供应中断"</strong>。多家分析机构警告，如果海峡长期封锁，将"保证性地引发全球经济衰退"。</p>
+
+<div class="callout warning">
+  <div class="callout-title">1970s再现？</div>
+  <p style="margin:0;color:var(--text-secondary)">许多经济学家将当前危机与1970年代的石油危机相提并论。但规模可能更大——1973年阿拉伯石油禁运影响的是部分产油国的出口，而霍尔木兹海峡封锁直接影响的是全球石油运输的主动脉。</p>
+</div>
+
+<h2>四、库尔德牌与政权更迭图谋</h2>
+
+<p>在军事打击之外，美以还积极推动<strong>伊朗内部的分裂</strong>：</p>
+
+<p><strong>库尔德因素</strong>——美以公开支持库尔德反政府武装参与对伊朗的军事行动，在伊朗库尔德斯坦地区开辟了一条空中打击走廊。企图通过引入内战，制造民族分裂。</p>
+
+<p><strong>"颜色革命"</strong>——在军事打击伊朗公共安全部队的同时，试图煽动民众进行"街头革命"，实现从内部瓦解政权。</p>
+
+<p><strong>信息战</strong>——散布伊朗领导层内部分裂的谣言，挑拨革命卫队和政府正规军的关系，唆使军队哗变。</p>
+
+<div class="callout">
+  <div class="callout-title">多线并进的战略</div>
+  <p style="margin:0;color:var(--text-secondary)">美以对伊朗的战争不仅是军事行动，更是一套"军事打击+政权更迭+经济绞杀+信息战"的组合拳。目标不只是摧毁伊朗的军事能力，而是从根本上改变伊朗的政权和地区秩序。</p>
+</div>
+
+<h2>五、地面入侵的阴影</h2>
+
+<p>到3月底，一个更加令人不安的信号出现了：<strong>美国地面部队开始大规模进入中东</strong>。</p>
+
+<p>3月28日，3,500名海军陆战队员搭乘"的黎波里"号两栖攻击舰抵达海湾地区。82空降师的1,500名士兵也在路上。纽约时报的分析标题直白地写道："特朗普面临是否发动伊朗地面战争的决定"。</p>
+
+<p>从空袭到地面入侵——如果这一步迈出，战争将完全升级到另一个层级。伊朗拥有近9,000万人口和复杂的地形，<strong>地面战争的代价可能远超伊拉克战争</strong>。</p>
+
+<div class="callout">
+  <div class="callout-title">本章小结</div>
+  <p style="margin:0;color:var(--text-secondary)">燎原之火已经远远超出了美伊两国的范围。真主党、胡塞武装、海湾国家、印度洋——每一个新的战场都在增加冲突的复杂性和失控风险。霍尔木兹海峡的封锁将战争的影响传导到了全球每一个加油站和超市。而地面部队的到来，暗示着最坏的可能性还没有到来。</p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="chapter3-epic-fury.html">← 第三章：雷霆之怒</a>
+  <a href="chapter5-price.html">第五章：代价与迷局 →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+</footer>
+</body>
+</html>

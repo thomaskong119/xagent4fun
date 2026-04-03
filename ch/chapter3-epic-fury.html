@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第三章：雷霆之怒 — 波斯湾迷局</title>
+<style>
+:root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--bg-card-hover:#222233;--text-primary:#e8e6e1;--text-secondary:#9a9a9a;--text-muted:#666;--accent:#c9a86c;--accent-dim:#8a7040;--red:#c94040;--red-dim:rgba(201,64,64,0.15);--border:#2a2a35;--serif:'Playfair Display','Noto Serif SC','Source Han Serif CN',serif;--sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s}.nav a:hover{color:var(--accent)}.nav-title{font-family:var(--serif);font-size:14px;color:var(--text-secondary)}
+.ch-hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}.ch-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,64,64,0.1) 0%,transparent 60%);pointer-events:none}.ch-num{font-family:var(--serif);font-size:6rem;color:var(--red);opacity:0.3;line-height:1}.ch-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin:16px 0}.ch-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:560px}
+.content{max-width:720px;margin:0 auto;padding:0 24px 100px}.content h2{font-family:var(--serif);font-size:1.5rem;margin:64px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border)}.content h3{font-family:var(--serif);font-size:1.15rem;margin:40px 0 16px;color:var(--accent)}.content p{margin-bottom:20px;color:var(--text-secondary);font-size:15px;line-height:1.9}.content p strong{color:var(--text-primary);font-weight:600}
+.callout{background:var(--bg-card);border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:14px}.callout.danger{border-left-color:var(--red)}.callout-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}.callout.danger .callout-title{color:var(--red)}
+.data-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}.dc-item{background:var(--bg-secondary);padding:20px 16px;text-align:center}.dc-value{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent)}.dc-value.red{color:var(--red)}.dc-label{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* HOUR-BY-HOUR */
+.hour-tl{margin:40px 0;position:relative;padding-left:40px}
+.hour-tl::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--accent-dim),var(--red))}
+.hour-item{position:relative;margin-bottom:28px}
+.hour-item::before{content:'';position:absolute;left:-30px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg-primary);border:2px solid var(--accent)}
+.hour-item.critical::before{border-color:var(--red);background:var(--red);box-shadow:0 0 10px rgba(201,64,64,0.4)}
+.hour-time{font-family:var(--mono);font-size:13px;color:var(--red);font-weight:700;margin-bottom:4px}
+.hour-title{font-weight:600;font-size:15px;margin-bottom:4px}
+.hour-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* CASUALTY TABLE */
+.cas-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.cas-card{background:var(--bg-secondary);border:1px solid var(--border);padding:20px}
+.cas-side{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.cas-side.us{color:#4a90d9}
+.cas-side.iran{color:var(--red)}
+.cas-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary)}
+.cas-row:last-child{border-bottom:none}
+.cas-row .val{color:var(--text-primary);font-weight:600}
+
+.ch-nav{display:flex;justify-content:space-between;padding:40px 24px;max-width:720px;margin:0 auto;border-top:1px solid var(--border)}.ch-nav a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s}.ch-nav a:hover{color:var(--accent)}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}.footer-brand{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:8px}
+@media(max-width:640px){.data-card{grid-template-columns:repeat(2,1fr)}.cas-grid{grid-template-columns:1fr}.hour-tl{padding-left:32px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="chapter2-abyss.html">← 上一章</a>
+  <span class="nav-title">第三章：雷霆之怒</span>
+  <a href="chapter4-wildfire.html">下一章 →</a>
+</nav>
+
+<section class="ch-hero">
+  <div class="ch-num">叁</div>
+  <div class="ch-title">雷霆之怒</div>
+  <div class="ch-subtitle">2026年2月28日，Operation Epic Fury<br>一场从德黑兰到科威特的72小时惊天剧变</div>
+</section>
+
+<article class="content">
+
+<h2>一、D-Day：2月28日</h2>
+
+<p>2026年2月28日凌晨，美国在完成中东军事部署后，联合以色列对伊朗发动了代号<strong>"Operation Epic Fury"</strong>（史诗之怒行动）的大规模军事打击。这是自2003年伊拉克战争以来，美国在中东发动的最大规模军事行动。</p>
+
+<h3>逐小时还原</h3>
+
+<div class="hour-tl">
+  <div class="hour-item critical">
+    <div class="hour-time">02:00 — 第一波打击</div>
+    <div class="hour-title">联合空袭全面展开</div>
+    <div class="hour-desc">美以联合空袭伊朗政府和军事目标，覆盖全国多个省份。</div>
+  </div>
+  <div class="hour-item critical">
+    <div class="hour-time">02:15 — 斩首行动</div>
+    <div class="hour-title">最高领袖哈梅内伊死亡</div>
+    <div class="hour-desc">精确制导武器击中哈梅内伊的德黑兰办公室。伊朗最高领导人身亡，同时阵亡的还有国防部长、总参谋长和革命卫队司令。一击摧毁了伊朗的整个最高军政指挥链。</div>
+  </div>
+  <div class="hour-item">
+    <div class="hour-time">03:00 — 伊朗还击</div>
+    <div class="hour-title">全面报复启动</div>
+    <div class="hour-desc">伊朗幸存的军事力量立即开始反击，向以色列、美国在中东的军事设施和盟友发射导弹。</div>
+  </div>
+  <div class="hour-item">
+    <div class="hour-time">日间 — 持续打击</div>
+    <div class="hour-title">153座城市遭袭</div>
+    <div class="hour-desc">首日打击覆盖伊朗31个省份153座城市，目标包括军事基地、政府设施、防空系统。</div>
+  </div>
+  <div class="hour-item critical">
+    <div class="hour-time">日间 — 米纳布</div>
+    <div class="hour-title">小学遭到轰炸</div>
+    <div class="hour-desc">伊朗南部城市米纳布，一所女子小学在空袭中被击中。伊朗官方公布168-175名女学生和教职员工死亡。这成为战争中最具争议和最令人震惊的事件之一。</div>
+  </div>
+</div>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">153</div>
+    <div class="dc-label">城市遭袭（首日）</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">31</div>
+    <div class="dc-label">省份受影响</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">175</div>
+    <div class="dc-label">米纳布学校死亡</div>
+  </div>
+</div>
+
+<h2>二、伊朗的还击</h2>
+
+<p>尽管最高领导层被一举消灭，伊朗军事力量在<strong>数小时内即展开大规模报复</strong>——证明其军事指挥体系具有一定的分布式弹性。</p>
+
+<p>伊朗的报复目标包括：</p>
+<ul style="color:var(--text-secondary);font-size:15px;margin:0 0 20px 24px;line-height:2">
+  <li><strong>以色列本土</strong> — 弹道导弹和无人机持续攻击</li>
+  <li><strong>美军在中东基地</strong> — 科威特、巴林、卡塔尔、沙特的美军设施</li>
+  <li><strong>霍尔木兹海峡</strong> — 攻击商业油轮，试图封锁海峡</li>
+  <li><strong>海湾国家</strong> — 被视为美国盟友的沙特、阿联酋等</li>
+</ul>
+
+<h2>三、第一周：惊天72小时</h2>
+
+<h3>3月1日 — 首批美军阵亡</h3>
+
+<p>伊朗无人机袭击了科威特舒艾拜港美军基地，<strong>6名美军士兵阵亡</strong>——这是冲突中首批美国军人死亡。同一天，三架美军F-15战斗机被科威特防空系统误击坠毁（友军火力事件）。</p>
+
+<p>也是在这一天，首批商业油轮在霍尔木兹海峡遭到导弹袭击，标志着伊朗正式启动<strong>封锁全球最重要石油运输通道</strong>的战略。</p>
+
+<h3>3月2日 — 真主党开辟第二战线</h3>
+
+<p>黎巴嫩真主党从北方向以色列发射火箭弹，声称是对以色列数月来持续空袭黎巴嫩的报复。以色列随即加大对黎巴嫩的打击力度，包括新一轮贝鲁特空袭和地面入侵行动。</p>
+
+<h3>3月4日 — 击沉伊朗护卫舰</h3>
+
+<p>美国潜艇在斯里兰卡海域击沉了伊朗海军"德纳"号护卫舰，<strong>至少104名船员阵亡</strong>。战场从波斯湾扩展到了印度洋。</p>
+
+<p>同日，以色列向黎巴嫩南部利塔尼河以南所有居民发出"紧急撤离警告"。</p>
+
+<h3>3月7日 — 环境灾难</h3>
+
+<p>以色列打击德黑兰等地多处储油设施，导致大量有毒物质向城市释放。伊朗表示这一袭击"破坏环境，严重威胁生命安全"，标志着冲突进入<strong>"危险的新阶段"</strong>。</p>
+
+<div class="callout danger">
+  <div class="callout-title">第一周战损概览</div>
+  <p style="margin:0;color:var(--text-secondary)">
+    <strong>伊朗方面：</strong>最高领袖+多名核心军政领导人死亡；1,300+人死亡，5,000+人受伤（官方9天数据）；核设施、军事基地、民用基础设施遭大面积摧毁<br><br>
+    <strong>美方：</strong>6名士兵在科威特阵亡；3架F-15友军误击坠毁；多处中东军事设施遭导弹袭击<br><br>
+    <strong>全球：</strong>霍尔木兹海峡商业运输受阻；油价急剧飙升；多国空域关闭
+  </p>
+</div>
+
+<h2>四、新领袖的诞生</h2>
+
+<p><strong>3月8日</strong>，在最高领袖被杀仅8天后，伊朗专家会议选举<strong>穆杰塔巴·哈梅内伊</strong>——被杀最高领袖的儿子——为新任最高领导人。据报道，他的候选资格得到了伊斯兰革命卫队的支持。</p>
+
+<p>这次权力交接的速度远超外界预期，它传递了一个强烈信号：<strong>美以通过"斩首行动"快速实现政权更迭的战略目标，已基本不可能实现</strong>。</p>
+
+<div class="callout">
+  <div class="callout-title">分析</div>
+  <p style="margin:0;color:var(--text-secondary)">新领袖的快速选出证明了伊朗政治体制的韧性。革命卫队在危机中发挥了核心稳定作用，既是军事力量的骨干，也是政治权力交接的保障者。美以的"斩首→混乱→政权崩溃"剧本未能上演。</p>
+</div>
+
+<h2>五、一场在谈判桌上策划的战争</h2>
+
+<p>回顾开战的背景，有一个事实无法回避：</p>
+
+<p><strong>这场战争是在核谈判进行期间发动的。</strong></p>
+
+<p>2月6日，双方刚在马斯喀特重启核谈判。2月25日，伊朗外长公开表示"历史性协议触手可及"。三天后，炸弹落在德黑兰。</p>
+
+<p>《求是》杂志发表的分析指出："美国和以色列未经安理会授权，袭击并杀害伊朗最高领导人，蓄意挑起对伊朗的战争。这是一场本不应该发生的战争。"</p>
+
+<p>从国际法角度看，在和平谈判期间发动突然袭击、未经联合国安理会授权对一个主权国家发动战争、公然击杀一个国家的最高领导人——这些行为均<strong>严重违反国际法和《联合国宪章》</strong>。</p>
+
+<div class="callout">
+  <div class="callout-title">本章小结</div>
+  <p style="margin:0;color:var(--text-secondary)">Operation Epic Fury的第一周展现了现代战争最残酷的一面：精确制导的斩首行动、大规模平民伤亡、环境灾难、海上封锁同步展开。伊朗失去了最高领导人和核心军政团队，但迅速完成了权力交接。美以的"速胜"期望从第一周起就开始落空——伊朗没有崩溃，而是选择了全面抵抗。</p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="chapter2-abyss.html">← 第二章：走向深渊</a>
+  <a href="chapter4-wildfire.html">第四章：燎原之火 →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

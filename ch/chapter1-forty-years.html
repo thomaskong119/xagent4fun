@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一章：四十年宿怨 — 波斯湾迷局</title>
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a25;
+  --bg-card-hover: #222233;
+  --text-primary: #e8e6e1;
+  --text-secondary: #9a9a9a;
+  --text-muted: #666;
+  --accent: #c9a86c;
+  --accent-dim: #8a7040;
+  --red: #c94040;
+  --red-dim: rgba(201,64,64,0.15);
+  --border: #2a2a35;
+  --serif: 'Playfair Display', 'Noto Serif SC', 'Source Han Serif CN', serif;
+  --sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--sans); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+.nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.nav a:hover { color: var(--accent); }
+.nav-title { font-family: var(--serif); font-size: 14px; color: var(--text-secondary); }
+
+/* CHAPTER HERO */
+.ch-hero { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; }
+.ch-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 40%, rgba(201,168,108,0.06) 0%, transparent 60%); pointer-events: none; }
+.ch-num { font-family: var(--serif); font-size: 6rem; color: var(--accent-dim); opacity: 0.3; line-height: 1; }
+.ch-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin: 16px 0; }
+.ch-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 560px; }
+
+/* CONTENT */
+.content { max-width: 720px; margin: 0 auto; padding: 0 24px 100px; }
+.content h2 { font-family: var(--serif); font-size: 1.5rem; margin: 64px 0 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.content h3 { font-family: var(--serif); font-size: 1.15rem; margin: 40px 0 16px; color: var(--accent); }
+.content p { margin-bottom: 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
+.content p strong { color: var(--text-primary); font-weight: 600; }
+
+/* CALLOUT */
+.callout { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; font-size: 14px; }
+.callout.danger { border-left-color: var(--red); }
+.callout-title { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.callout.danger .callout-title { color: var(--red); }
+
+/* DATA CARD */
+.data-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--border); margin: 32px 0; }
+.dc-item { background: var(--bg-secondary); padding: 20px 16px; text-align: center; }
+.dc-value { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+.dc-value.red { color: var(--red); }
+.dc-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* TIMELINE MINI */
+.mini-tl { margin: 32px 0; padding-left: 24px; border-left: 2px solid var(--border); }
+.mini-tl-item { margin-bottom: 20px; }
+.mini-tl-date { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.mini-tl-text { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+/* SOURCE */
+.source { font-size: 12px; color: var(--text-muted); margin-top: -12px; margin-bottom: 20px; }
+.source::before { content: '📎 '; }
+
+/* CHAPTER NAV */
+.ch-nav { display: flex; justify-content: space-between; padding: 40px 24px; max-width: 720px; margin: 0 auto; border-top: 1px solid var(--border); }
+.ch-nav a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.ch-nav a:hover { color: var(--accent); }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); }
+.footer-brand { font-family: var(--mono); font-size: 13px; letter-spacing: 3px; color: var(--accent); margin-bottom: 8px; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 640px) { .data-card { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← 返回目录</a>
+  <span class="nav-title">第一章：四十年宿怨</span>
+  <a href="chapter2-abyss.html">下一章 →</a>
+</nav>
+
+<section class="ch-hero">
+  <div class="ch-num">壹</div>
+  <div class="ch-title">四十年宿怨</div>
+  <div class="ch-subtitle">从巴列维王朝的覆灭到"邪恶轴心"的诞生——美国与伊朗，两个曾经的盟友如何变成了不死不休的敌人</div>
+</section>
+
+<article class="content">
+
+<h2>一、盟友时代：巴列维王朝与美国</h2>
+
+<p>今天的人们很难想象，美国和伊朗曾经是亲密的盟友。</p>
+
+<p>二战期间，伊朗遭美英苏三国军事占领。冷战开始后，<strong>美国将伊朗视为遏制苏联南下的关键棋子</strong>。1953年，美国中情局与英国军情六处联手策划政变，推翻了民选首相摩萨台，扶植巴列维国王重新掌权。此后25年，巴列维王朝的内政外交均被美国深度控制，经济遭掠夺，文化被西方渗透。</p>
+
+<p>伊朗成为美国在中东最重要的盟友之一——购买大量美式武器，石油源源不断流向西方。表面的繁荣之下，是日益加深的民族屈辱与贫富分化。</p>
+
+<div class="callout">
+  <div class="callout-title">历史注脚</div>
+  <p style="margin:0;color:var(--text-secondary)">1953年的"阿贾克斯行动"是美国在中东的第一次政变行动，也是美伊关系的"原罪"。60多年后，这段历史仍是伊朗反美叙事的核心论据。</p>
+</div>
+
+<h2>二、革命与决裂：1979</h2>
+
+<p>1978年至1979年，宗教领袖霍梅尼领导的伊斯兰革命席卷全国，推翻了巴列维王朝。革命的核心诉求是<strong>反独裁、反腐败、反美</strong>。</p>
+
+<p>新生的伊斯兰共和国在外交上奉行民族主义和伊斯兰主义，坚决反对美国在中东的霸权。1979年11月，伊朗学生占领美国大使馆，扣留52名人质长达444天，成为两国关系彻底断裂的标志性事件。</p>
+
+<div class="data-card">
+  <div class="dc-item">
+    <div class="dc-value red">444</div>
+    <div class="dc-label">天人质危机</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">52</div>
+    <div class="dc-label">名人质</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value red">1980</div>
+    <div class="dc-label">年正式断交</div>
+  </div>
+  <div class="dc-item">
+    <div class="dc-value">45</div>
+    <div class="dc-label">年无外交关系</div>
+  </div>
+</div>
+
+<p><strong>1980年4月7日</strong>，美国宣布与伊朗断交，正式实施经济制裁——石油禁运、冻结伊朗资产、驱逐在美伊朗人。自此，美伊成为死敌，至今未恢复外交关系。</p>
+
+<h2>三、两伊战争：美国的阴影</h2>
+
+<p>1980年，伊拉克萨达姆政权入侵伊朗，开启了长达八年的两伊战争。这场战争造成超过100万人死亡。<strong>美国在这场战争中扮演了极为复杂的角色</strong>——表面中立，实际上向伊拉克提供情报、武器和资金支持，同时秘密向伊朗出售武器（"伊朗门事件"）。</p>
+
+<p>1988年，美国海军巡洋舰"文森尼斯"号击落伊朗航空655号航班，造成290名平民死亡，包括66名儿童。美国至今未就此事正式道歉。</p>
+
+<div class="callout danger">
+  <div class="callout-title">创伤记忆</div>
+  <p style="margin:0;color:var(--text-secondary)">伊朗航空655号事件在伊朗的集体记忆中占据着特殊位置，类似于美国人对9·11的记忆。每年都有纪念活动，提醒伊朗人"美国从来不值得信任"。</p>
+</div>
+
+<h2>四、制裁、核问题与"邪恶轴心"</h2>
+
+<p>冷战结束后，美伊关系并未缓和。<strong>2001年"9·11"事件后</strong>，尽管伊朗实际上在阿富汗问题上与美国有过合作，小布什政府仍将伊朗列为"邪恶轴心"之一，指责其发展大规模杀伤性武器、支持恐怖主义。</p>
+
+<p>伊朗核问题成为双方矛盾的焦点。伊朗坚称其核计划是民用性质，甚至颁布宗教法令禁止发展核武器。但美国和以色列坚持认为伊朗的目标就是核武器，要求其完全弃核。</p>
+
+<h3>制裁的代价</h3>
+
+<p>持续数十年的严厉经济制裁使伊朗经济接近崩溃。石油生产和出口降到历史最低水平，货币贬值，物价飞涨，民生困苦。制裁的本质是<strong>经济战争</strong>——不流血，但同样致命。</p>
+
+<h3>2015年核协议：昙花一现的希望</h3>
+
+<p>2015年，奥巴马政府与伊朗达成具有里程碑意义的《联合全面行动计划》（JCPOA），伊朗同意限制核活动，换取制裁解除。中东看到了和平曙光。</p>
+
+<p>然而，<strong>2018年特朗普单方面退出核协议</strong>，重新对伊朗实施"极限施压"，包括：</p>
+
+<div class="mini-tl">
+  <div class="mini-tl-item">
+    <div class="mini-tl-date">外交</div>
+    <div class="mini-tl-text">打造地区反伊朗联盟，推动以色列与阿拉伯国家关系正常化（《亚伯拉罕协议》）</div>
+  </div>
+  <div class="mini-tl-item">
+    <div class="mini-tl-date">经济</div>
+    <div class="mini-tl-text">全面经济制裁，"将伊朗石油出口降至零"</div>
+  </div>
+  <div class="mini-tl-item">
+    <div class="mini-tl-date">军事</div>
+    <div class="mini-tl-text">加强威慑部署，2020年无人机炸死伊朗革命卫队苏莱曼尼将军</div>
+  </div>
+  <div class="mini-tl-item">
+    <div class="mini-tl-date">代理人</div>
+    <div class="mini-tl-text">联合以色列打击伊朗在地区的盟友：哈马斯、真主党、胡塞武装</div>
+  </div>
+</div>
+
+<h2>五、不可调和的矛盾</h2>
+
+<p>美伊对抗的根源不是单一事件，而是<strong>多层次的结构性矛盾</strong>：</p>
+
+<h3>地缘政治</h3>
+<p>伊朗是中东强国，从波斯湾到东地中海构建了"什叶派新月地带"。美国视这一势力范围为对其中东霸权的直接挑战。</p>
+
+<h3>能源控制</h3>
+<p>伊朗扼守霍尔木兹海峡——全球五分之一石油运输的必经之路。其盟友也门胡塞武装把守另一条战略要道——红海曼德海峡。美国将确保中东石油安全流入西方世界视为核心利益。</p>
+
+<h3>意识形态</h3>
+<p>伊朗的政教合一体制与美国推崇的自由民主价值观根本对立。伊朗视美国为"大撒旦"，美国视伊朗为"邪恶政权"。</p>
+
+<h3>安全观冲突</h3>
+<p><strong>美以奉行绝对安全观</strong>——不能容忍伊朗拥有任何可能威胁其安全的军事能力。伊朗则认为，面对拥有核武器的以色列和全球霸主美国的持续威胁，发展自卫能力是正当权利。</p>
+
+<div class="callout">
+  <div class="callout-title">本章小结</div>
+  <p style="margin:0;color:var(--text-secondary)">四十多年的对抗塑造了一种几乎不可逆转的敌对格局。革命、人质危机、战争、制裁、暗杀——每一次冲突都在加深仇恨的刻痕。到2023年中东危机全面爆发时，美伊之间的矛盾已如干柴烈火，只差一个火星。</p>
+</div>
+
+</article>
+
+<div class="ch-nav">
+  <a href="index.html">← 返回目录</a>
+  <a href="chapter2-abyss.html">第二章：走向深渊 →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">X-AGENT PRODUCED</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
