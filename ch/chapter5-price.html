@@ -56,7 +56,7 @@
   <a href="index.html">返回目录</a>
 </nav>
 
-<section class="ch-hero">
+<section class="ch-hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.8), rgba(10,10,15,0.95)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Oil_Prices_Since_1861.svg/1280px-Oil_Prices_Since_1861.svg.png') center bottom/cover no-repeat;">
   <div class="ch-num">伍</div>
   <div class="ch-title">代价与迷局</div>
   <div class="ch-subtitle">当战争的账单开始到来，没有人是赢家<br>经济冲击、人道灾难、大国博弈与不确定的未来</div>
@@ -91,6 +91,10 @@
     <div class="bar-track"><div class="bar-fill accent" style="width:45%"></div></div>
     <div class="bar-value">45%</div>
   </div>
+</div>
+
+<div style="background:var(--bg-secondary);border:1px solid var(--border);padding:20px;margin:32px 0;">
+  <canvas id="priceChart" height="220"></canvas>
 </div>
 
 <p>里亚尔暴跌，食品、药品、汽油、电池价格大幅上涨。面粉涨幅接近十倍。<strong>战争使长期制裁下已经脆弱的经济加速崩溃</strong>。</p>
@@ -237,5 +241,67 @@
     © 2026 Stonehenge AI Technology · X-Agent Deep Investigation
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const ctx = document.getElementById('priceChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['面粉', '肉类', '瓶装水', '电池', '汽油', '药品'],
+        datasets: [{
+          label: '价格涨幅 (%)',
+          data: [986, 817, 650, 420, 350, 280],
+          backgroundColor: [
+            'rgba(201,64,64,0.8)',
+            'rgba(201,64,64,0.7)',
+            'rgba(212,132,42,0.7)',
+            'rgba(212,132,42,0.6)',
+            'rgba(201,168,108,0.6)',
+            'rgba(201,168,108,0.5)'
+          ],
+          borderColor: [
+            '#c94040','#c94040','#d4842a','#d4842a','#c9a86c','#c9a86c'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1a1a25',
+            borderColor: '#2a2a35',
+            borderWidth: 1,
+            titleColor: '#c9a86c',
+            bodyColor: '#e8e6e1',
+            callbacks: {
+              label: function(c) { return '+' + c.parsed.x + '%'; }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: '#666', font: { size: 11, family: 'monospace' },
+              callback: function(v) { return '+' + v + '%'; }
+            },
+            grid: { color: 'rgba(42,42,53,0.5)' }
+          },
+          y: {
+            ticks: { color: '#9a9a9a', font: { size: 13 } },
+            grid: { display: false }
+          }
+        },
+        animation: { duration: 1200, easing: 'easeOutQuart' }
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
