@@ -10,22 +10,40 @@
 <link rel="stylesheet" href="../assets/home.css">
 <style>
 body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',system-ui,sans-serif;}
-.chart-box p,.map-box p{max-width:640px;margin:0 auto 20px;}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.7) 40%, rgba(10,10,15,0.92) 80%, var(--bg-primary) 100%), url('../assets/hormuz-map.png') center/cover no-repeat;">
+<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.4) 0%, rgba(10,10,15,0.68) 42%, rgba(10,10,15,0.92) 82%, var(--bg-primary) 100%), url('../assets/hormuz-map.png') center/cover no-repeat;">
   <div class="lang-switch">
     <a href="#" class="active">中文</a> / <a href="../en/index.html">EN</a>
   </div>
-  <div class="hero-tag">Panoramic Analysis</div>
+  <div class="hero-tag">展示样稿 · X-Agent / Stonehenge AI</div>
+  <div class="hero-brand">
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">出品主体</span>
+      <span class="hero-brand-value">X-Agent 研究展示页</span>
+    </div>
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">能力侧重</span>
+      <span class="hero-brand-value">叙事整合 · OSINT 组织 · 专题可视化表达</span>
+    </div>
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">样稿属性</span>
+      <span class="hero-brand-value">Stonehenge AI 决策智能能力对外展示样板</span>
+    </div>
+  </div>
   <h1><span class="red">波斯湾</span>迷局</h1>
   <h1 style="font-size: clamp(1.2rem,3vw,2rem); margin-top: -8px; color: var(--text-secondary);">美伊战争全景解读</h1>
+  <div class="hero-deck">
+    <span class="hero-pill">品牌样板</span>
+    <span class="hero-pill">多源综合研判</span>
+    <span class="hero-pill">冲突叙事设计</span>
+    <span class="hero-pill">中英文长篇专题</span>
+  </div>
   <p class="hero-subtitle">
-    从四十年宿怨到一场本不该发生的战争<br>
-    五个章节，追踪一场正在改变世界秩序的冲突
+    从四十年宿怨到一场本不该发生的战争。<br>
+    五个章节，追踪一个地区热点如何演变成全球系统性冲击。
   </p>
   <div class="hero-meta">
     <span>2026.04</span>
@@ -33,13 +51,14 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
     <span>5 Chapters</span>
     <span class="sep">—</span>
     <span>多源综合</span>
+    <span class="sep">—</span>
+    <span>Stonehenge AI 展示样稿</span>
   </div>
   <div class="scroll-cue">
     <span>向下滚动</span>
   </div>
 </section>
 
-<!-- EPIGRAPH -->
 <section class="epigraph reveal">
   <blockquote>
     2026年2月28日，在伊美谈判取得进展背景下，美国和以色列未经安理会授权，袭击并杀害伊朗最高领导人，蓄意挑起对伊朗的战争。这是一场本不应该发生的战争。
@@ -47,72 +66,169 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
   <cite>— 唐志超，中国社科院西亚非洲研究所</cite>
 </section>
 
-<!-- STATS -->
-<section class="stats reveal">
-  <div class="stat">
-    <div class="stat-value red">35</div>
-    <div class="stat-label">Days of War</div>
-    <div class="stat-desc">2月28日至今，战事仍在持续</div>
+<section class="section-shell reveal" data-section="Situation Brief">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">局势速览</h2>
+    </div>
+    <p class="section-intro">以出版物式开场先交代冲突规模、持续时间与外溢冲击，让读者在进入全文前先抓住局势重量。</p>
   </div>
-  <div class="stat">
-    <div class="stat-value">$116+</div>
-    <div class="stat-label">Brent Crude</div>
-    <div class="stat-desc">布伦特原油飙至每桶116美元以上</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value red">1,300+</div>
-    <div class="stat-label">Iranian Deaths</div>
-    <div class="stat-desc">伊朗官方公布的前9天伤亡</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">153</div>
-    <div class="stat-label">Cities Struck</div>
-    <div class="stat-desc">伊朗31个省份153座城市遭袭</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value red">35</div>
+      <div class="stat-label">Days of War</div>
+      <div class="stat-desc">2月28日至今，战事仍在持续</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">$116+</div>
+      <div class="stat-label">Brent Crude</div>
+      <div class="stat-desc">布伦特原油飙至每桶116美元以上</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value red">1,300+</div>
+      <div class="stat-label">Iranian Deaths</div>
+      <div class="stat-desc">伊朗官方公布的前9天伤亡</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">153</div>
+      <div class="stat-label">Cities Struck</div>
+      <div class="stat-desc">伊朗31个省份153座城市遭袭</div>
+    </div>
   </div>
 </section>
 
-<!-- OIL PRICE CHART -->
 <section class="chart-section reveal">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">市场冲击信号</h2>
+    </div>
+    <p class="section-intro">油价曲线是最直观的公共信号：从谈判窗口到战争定价，只用了极短的时间。</p>
+  </div>
   <div class="chart-box">
     <h2>布伦特原油价格走势</h2>
     <p>2026年2月—4月 · 数据来源：Trading Economics / Kaggle</p>
     <div class="chart-canvas-wrap">
       <canvas id="oilChart" height="260"></canvas>
     </div>
-  </div>
-</section>
-
-<!-- THEATER MAP -->
-<section class="map-section reveal">
-  <div class="map-box">
-    <h2>冲突波及范围</h2>
-    <p>截至2026年4月3日 · 至少8国直接受到军事影响</p>
-    <img src="../assets/hormuz-map.png" alt="Middle East" style="width:100%;max-width:400px;display:block;margin:0 auto 20px;opacity:0.6;filter:hue-rotate(180deg) brightness(0.6);">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;">
-      <div style="padding:12px;background:rgba(201,64,64,0.1);border-left:3px solid var(--red);">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:2px;">主战场</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇮🇷 伊朗 · 🇮🇱 以色列 · 🇱🇧 黎巴嫩</div>
+    <div class="chart-notes">
+      <div class="chart-note">
+        <div class="chart-note-label">触发时点</div>
+        <div class="chart-note-value red">2月28日</div>
+        <div class="chart-note-copy">战争爆发将原本平稳的价格区间迅速推入重估通道。</div>
       </div>
-      <div style="padding:12px;background:rgba(212,132,42,0.1);border-left:3px solid #d4842a;">
-        <div style="font-family:var(--mono);font-size:10px;color:#d4842a;letter-spacing:2px;">波及国家</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇸🇦 沙特 · 🇰🇼 科威特 · 🇧🇭 巴林 · 🇶🇦 卡塔尔</div>
+      <div class="chart-note">
+        <div class="chart-note-label">高点读数</div>
+        <div class="chart-note-value">$116.5</div>
+        <div class="chart-note-copy">峰值反映的是对霍尔木兹风险与持久战的双重担忧。</div>
       </div>
-      <div style="padding:12px;background:rgba(74,144,217,0.1);border-left:3px solid #4a90d9;">
-        <div style="font-family:var(--mono);font-size:10px;color:#4a90d9;letter-spacing:2px;">远程打击</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇾🇪 也门 · 🇮🇶 伊拉克 · 🌊 印度洋</div>
-      </div>
-      <div style="padding:12px;background:rgba(201,168,108,0.1);border-left:3px solid var(--accent);">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;">全球冲击</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">⛽ 霍尔木兹海峡 · 🚢 红海航线</div>
+      <div class="chart-note">
+        <div class="chart-note-label">战略含义</div>
+        <div class="chart-note-value">全球性</div>
+        <div class="chart-note-copy">这不只是战场故事，也是能源安全与供应链风险的故事。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KEY TIMELINE -->
+<section class="map-section reveal">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">战区地理结构</h2>
+    </div>
+    <p class="section-intro">把地图从装饰图改成信息图：核心战场、次级波及、海上咽喉与远程打击纵深，被放进同一套阅读框架里。</p>
+  </div>
+  <div class="map-box">
+    <h2>冲突波及范围</h2>
+    <p>截至2026年4月3日 · 至少8国直接受到军事影响</p>
+    <div class="map-stage">
+      <img src="../assets/hormuz-map.png" alt="中东冲突地理态势图">
+      <div class="map-grid"></div>
+      <div class="map-ring r1"></div>
+      <div class="map-ring r2"></div>
+      <div class="map-ring r3"></div>
+
+      <div class="map-hotspot primary" style="left:60%;top:41%;">
+        <div class="map-label">
+          <span class="map-label-title">核心战区</span>
+          <span class="map-label-copy">伊朗 · 以色列 · 黎巴嫩</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot secondary" style="left:48%;top:48%;">
+        <div class="map-label">
+          <span class="map-label-title">基地暴露带</span>
+          <span class="map-label-copy">沙特 · 科威特 · 巴林 · 卡塔尔</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot remote" style="left:33%;top:59%;">
+        <div class="map-label">
+          <span class="map-label-title">远程打击带</span>
+          <span class="map-label-copy">也门 · 伊拉克 · 印度洋</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot maritime" style="left:53%;top:57%;">
+        <div class="map-label">
+          <span class="map-label-title">海上咽喉</span>
+          <span class="map-label-copy">霍尔木兹海峡 · 红海航线</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-summary">
+      <div class="map-legend">
+        <div class="legend-card primary">
+          <h3>直接交火区</h3>
+          <p>高价值目标打击、斩首行动与直接互射构成冲突重心。</p>
+        </div>
+        <div class="legend-card secondary">
+          <h3>地区外溢区</h3>
+          <p>美军基地与海湾基础设施让战争不再是单纯的双边对抗。</p>
+        </div>
+        <div class="legend-card remote">
+          <h3>远程延伸区</h3>
+          <p>代理力量与远程打击把作战外沿推到海湾之外。</p>
+        </div>
+        <div class="legend-card maritime">
+          <h3>系统性风险区</h3>
+          <p>航运通道与油气运输线把军事升级直接传导为全球经济冲击。</p>
+        </div>
+      </div>
+      <div class="map-metrics">
+        <h3>态势读数</h3>
+        <p>给决策阅读者的压缩版结论：这场冲突同时作用于国家领土、联盟设施与全球贸易通道。</p>
+        <div class="map-metric-grid">
+          <div class="map-metric">
+            <strong>8+</strong>
+            <span>直接受影响国家</span>
+          </div>
+          <div class="map-metric">
+            <strong>2</strong>
+            <span>关键海上通道</span>
+          </div>
+          <div class="map-metric">
+            <strong>3</strong>
+            <span>打击纵深层级</span>
+          </div>
+          <div class="map-metric">
+            <strong>多战线</strong>
+            <span>冲突几何结构</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="timeline-section reveal">
-  <h2>关键节点</h2>
-  <div class="tl">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">升级时间轴</h2>
+    </div>
+    <p class="section-intro">不再只是罗列事件，而是用“压力逐级抬升”的方式组织叙事：地区导火索、直接互射、失效的降级窗口，再到全球外溢。</p>
+  </div>
+  <div class="timeline-shell">
     <div class="tl-item">
       <div class="tl-date">2023.10.07</div>
       <div class="tl-title">阿克萨洪水：中东危机起点</div>
@@ -131,12 +247,12 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
     <div class="tl-item">
       <div class="tl-date">2025.12.28</div>
       <div class="tl-title">伊朗内乱：大规模抗议爆发</div>
-      <div class="tl-desc">通胀、货币贬值引发全国示威，从经济诉求迅速演变为要求推翻政权。美国看到"可乘之机"。</div>
+      <div class="tl-desc">通胀、货币贬值引发全国示威，从经济诉求迅速演变为要求推翻政权。美国看到“可乘之机”。</div>
     </div>
     <div class="tl-item">
       <div class="tl-date">2026.01 — 2026.02</div>
       <div class="tl-title">军事集结与最后的谈判</div>
-      <div class="tl-desc">美国史上最大中东军事集结，同时恢复核谈判。伊朗外长2月25日称"历史性协议触手可及"。三天后，战争爆发。</div>
+      <div class="tl-desc">美国史上最大中东军事集结，同时恢复核谈判。伊朗外长2月25日称“历史性协议触手可及”。三天后，战争爆发。</div>
     </div>
     <div class="tl-item critical">
       <div class="tl-date">2026.02.28</div>
@@ -146,47 +262,64 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
     <div class="tl-item critical">
       <div class="tl-date">2026.03 — 至今</div>
       <div class="tl-title">战火蔓延，全球震荡</div>
-      <div class="tl-desc">霍尔木兹海峡危机、真主党/胡塞武装参战、油价飙升、美军地面部队抵达。"速胜"预期落空，走向消耗战。</div>
+      <div class="tl-desc">霍尔木兹海峡危机、真主党/胡塞武装参战、油价飙升、美军地面部队抵达。“速胜”预期落空，走向消耗战。</div>
     </div>
   </div>
 </section>
 
-<!-- CHAPTERS -->
 <section class="chapters reveal">
-  <h2>报告全文</h2>
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">报告全文</h2>
+    </div>
+    <p class="section-intro">每章都保持独立专题页质感，但整体又像一份连续翻阅的冲突升级长篇。</p>
+  </div>
   <div class="ch-grid">
     <a class="ch-card" href="chapter1-forty-years.html">
-      <div class="ch-num">壹</div>
-      <div class="ch-title">四十年宿怨</div>
-      <div class="ch-desc">从1979伊斯兰革命到"邪恶轴心"，美伊对抗的历史根源。石油、核武、代理人战争——一条通向冲突的必然之路。</div>
+      <div>
+        <div class="ch-num">壹</div>
+        <div class="ch-title">四十年宿怨</div>
+        <div class="ch-desc">从1979伊斯兰革命到“邪恶轴心”，美伊对抗的历史根源。石油、核武、代理人战争——一条通向冲突的必然之路。</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter2-abyss.html">
-      <div class="ch-num">贰</div>
-      <div class="ch-title">走向深渊</div>
-      <div class="ch-desc">2023阿克萨洪水→2024以伊互射→2025核打击→谈判→抗议→军事集结。每一步升级如何让战争成为必然。</div>
+      <div>
+        <div class="ch-num">贰</div>
+        <div class="ch-title">走向深渊</div>
+        <div class="ch-desc">2023阿克萨洪水→2024以伊互射→2025核打击→谈判→抗议→军事集结。每一步升级如何让战争成为必然。</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter3-epic-fury.html">
-      <div class="ch-num">叁</div>
-      <div class="ch-title">雷霆之怒</div>
-      <div class="ch-desc">2026年2月28日，Operation Epic Fury。闪电斩首、校园轰炸、第一批美军阵亡——开战第一周的惊天72小时。</div>
+      <div>
+        <div class="ch-num">叁</div>
+        <div class="ch-title">雷霆之怒</div>
+        <div class="ch-desc">2026年2月28日，Operation Epic Fury。闪电斩首、校园轰炸、第一批美军阵亡——开战第一周的惊天72小时。</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter4-wildfire.html">
-      <div class="ch-num">肆</div>
-      <div class="ch-title">燎原之火</div>
-      <div class="ch-desc">真主党开辟第二战线，胡塞武装入局，霍尔木兹海峡封锁，伊朗导弹打击2500英里外的美军基地——战火蔓延全球。</div>
+      <div>
+        <div class="ch-num">肆</div>
+        <div class="ch-title">燎原之火</div>
+        <div class="ch-desc">真主党开辟第二战线，胡塞武装入局，霍尔木兹海峡封锁，伊朗导弹打击2500英里外的美军基地——战火蔓延全球。</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter5-price.html">
-      <div class="ch-num">伍</div>
-      <div class="ch-title">代价与迷局</div>
-      <div class="ch-desc">全球石油市场最大供应中断、伊朗面粉涨价986%、美国地面部队抵达。停火博弈、大国角力，走向何方？</div>
+      <div>
+        <div class="ch-num">伍</div>
+        <div class="ch-title">代价与迷局</div>
+        <div class="ch-desc">全球石油市场最大供应中断、伊朗面粉涨价986%、美国地面部队抵达。停火博弈、大国角力，走向何方？</div>
+      </div>
     </a>
   </div>
 </section>
 
-<!-- METHODOLOGY -->
 <section class="methodology reveal">
-  <h2>信息来源</h2>
-  <p style="max-width:720px;margin:0 auto 28px;text-align:center;font-size:14px;color:var(--text-secondary);">按新闻报道、学术/智库与数据渠道分层整理，并对关键事实进行多源交叉核验，以提升整站可信度。</p>
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">信息来源与核验</h2>
+    </div>
+    <p class="section-intro">把可信度提示显性化：新闻报道、学术解读与市场数据分别列出，再通过交叉核验重新串联。</p>
+  </div>
   <div class="method-grid">
     <div class="method-item">
       <h3>新闻源</h3>
@@ -207,9 +340,8 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-brand">X-AGENT PRODUCED</div>
+  <div class="footer-brand">X-AGENT PRODUCED · STONEHENGE AI 展示样稿</div>
   <div class="footer-note">
     本报告由 X-Agent 自主完成调研、分析与可视化。人类提供方向指导与审校。<br>
     数据截止：2026年4月3日。内容仅供研究参考，不代表任何政治立场。
@@ -218,7 +350,6 @@ body{--sans:'Noto Serif SC','Source Han Serif CN','Songti SC','PingFang SC',syst
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
-// Oil Price Chart
 document.addEventListener('DOMContentLoaded', function() {
   const ctx = document.getElementById('oilChart');
   if (ctx) {
@@ -233,12 +364,11 @@ document.addEventListener('DOMContentLoaded', function() {
           backgroundColor: 'rgba(201,168,108,0.1)',
           fill: true,
           tension: 0.3,
-          pointRadius: 4,
           pointBackgroundColor: function(context) {
             return context.dataIndex === 3 ? '#c94040' : '#c9a86c';
           },
           pointRadius: function(context) {
-            return context.dataIndex === 3 ? 8 : 4;
+            return context.dataIndex === 3 ? 7 : 3.5;
           },
           borderWidth: 2
         }]
@@ -263,12 +393,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         scales: {
           x: {
-            ticks: { color: '#666', font: { size: 11, family: 'monospace' }, maxRotation: 0 },
+            ticks: { color: '#787267', font: { size: 11, family: 'monospace' }, maxRotation: 0 },
             grid: { color: 'rgba(42,42,53,0.5)' }
           },
           y: {
             ticks: {
-              color: '#666',
+              color: '#787267',
               font: { size: 11, family: 'monospace' },
               callback: function(value) { return '$' + value; }
             },
@@ -284,7 +414,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

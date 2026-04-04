@@ -8,23 +8,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/home.css">
-<style>
-.chart-box p,.map-box p{max-width:640px;margin:0 auto 20px;}
-</style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.7) 40%, rgba(10,10,15,0.92) 80%, var(--bg-primary) 100%), url('../assets/hormuz-map.png') center/cover no-repeat;">
+<section class="hero" style="background:linear-gradient(to bottom, rgba(10,10,15,0.4) 0%, rgba(10,10,15,0.68) 42%, rgba(10,10,15,0.92) 82%, var(--bg-primary) 100%), url('../assets/hormuz-map.png') center/cover no-repeat;">
   <div class="lang-switch">
     <a href="../ch/index.html">中文</a> / <a href="#" class="active">EN</a>
   </div>
-  <div class="hero-tag">Panoramic Analysis</div>
+  <div class="hero-tag">Showcase dossier · X-Agent / Stonehenge AI</div>
+  <div class="hero-brand">
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">Produced by</span>
+      <span class="hero-brand-value">X-Agent Research Studio</span>
+    </div>
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">Capability focus</span>
+      <span class="hero-brand-value">Narrative synthesis · OSINT framing · visual publication</span>
+    </div>
+    <div class="hero-brand-item">
+      <span class="hero-brand-label">Showcase type</span>
+      <span class="hero-brand-value">Editorial sample for Stonehenge AI decision-intelligence work</span>
+    </div>
+  </div>
   <h1>The <span class="red">Persian Gulf</span> Enigma</h1>
   <h1 style="font-size: clamp(1.2rem,3vw,2rem); margin-top: -8px; color: var(--text-secondary);">US-Iran War Panoramic Analysis</h1>
+  <div class="hero-deck">
+    <span class="hero-pill">Brand showcase</span>
+    <span class="hero-pill">Multi-source synthesis</span>
+    <span class="hero-pill">Conflict narrative design</span>
+    <span class="hero-pill">Bilingual long-form publication</span>
+  </div>
   <p class="hero-subtitle">
-    From forty years of enmity to a war that should never have happened<br>
-    Five chapters tracing a conflict that is reshaping the world order
+    From forty years of enmity to a war that should never have happened.<br>
+    Five chapters tracing how a regional flashpoint turns into a global systems shock.
   </p>
   <div class="hero-meta">
     <span>2026.04</span>
@@ -32,13 +48,14 @@
     <span>5 Chapters</span>
     <span class="sep">—</span>
     <span>Multi-Source</span>
+    <span class="sep">—</span>
+    <span>Stonehenge AI Showcase</span>
   </div>
   <div class="scroll-cue">
     <span>Scroll Down</span>
   </div>
 </section>
 
-<!-- EPIGRAPH -->
 <section class="epigraph reveal">
   <blockquote>
     On February 28, 2026, amid progress in Iran-US negotiations, the United States and Israel—without UN Security Council authorization—attacked and killed Iran's Supreme Leader, deliberately provoking a war against Iran. This is a war that should never have happened.
@@ -46,72 +63,169 @@
   <cite>— Tang Zhichao, Chinese Academy of Social Sciences, Institute of West Asian and African Studies</cite>
 </section>
 
-<!-- STATS -->
-<section class="stats reveal">
-  <div class="stat">
-    <div class="stat-value red">35</div>
-    <div class="stat-label">Days of War</div>
-    <div class="stat-desc">Since February 28 — hostilities continue</div>
+<section class="section-shell reveal" data-section="Situation Brief">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Crisis at a Glance</h2>
+    </div>
+    <p class="section-intro">A publication-format opening panel that frames the scale, duration, and shock profile of the conflict before readers enter the full narrative.</p>
   </div>
-  <div class="stat">
-    <div class="stat-value">$116+</div>
-    <div class="stat-label">Brent Crude</div>
-    <div class="stat-desc">Brent crude surges past $116 per barrel</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value red">1,300+</div>
-    <div class="stat-label">Iranian Deaths</div>
-    <div class="stat-desc">Official Iranian toll for the first 9 days</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">153</div>
-    <div class="stat-label">Cities Struck</div>
-    <div class="stat-desc">153 cities across all 31 Iranian provinces hit</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value red">35</div>
+      <div class="stat-label">Days of War</div>
+      <div class="stat-desc">Since February 28 — hostilities continue</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">$116+</div>
+      <div class="stat-label">Brent Crude</div>
+      <div class="stat-desc">Brent crude surges past $116 per barrel</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value red">1,300+</div>
+      <div class="stat-label">Iranian Deaths</div>
+      <div class="stat-desc">Official Iranian toll for the first 9 days</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">153</div>
+      <div class="stat-label">Cities Struck</div>
+      <div class="stat-desc">153 cities across all 31 Iranian provinces hit</div>
+    </div>
   </div>
 </section>
 
-<!-- OIL PRICE CHART -->
 <section class="chart-section reveal">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Market Shock Signal</h2>
+    </div>
+    <p class="section-intro">The oil curve acts as the cleanest public indicator of escalation: from negotiation optimism to war pricing in just a few sessions.</p>
+  </div>
   <div class="chart-box">
     <h2>Brent Crude Oil Price Trend</h2>
     <p>February–April 2026 · Source: Trading Economics / Kaggle</p>
     <div class="chart-canvas-wrap">
       <canvas id="oilChart" height="260"></canvas>
     </div>
-  </div>
-</section>
-
-<!-- THEATER MAP -->
-<section class="map-section reveal">
-  <div class="map-box">
-    <h2>Conflict Zone Overview</h2>
-    <p>As of April 3, 2026 · At least 8 countries directly affected by military operations</p>
-    <img src="../assets/hormuz-map.png" alt="Middle East" style="width:100%;max-width:400px;display:block;margin:0 auto 20px;opacity:0.6;filter:hue-rotate(180deg) brightness(0.6);">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;">
-      <div style="padding:12px;background:rgba(201,64,64,0.1);border-left:3px solid var(--red);">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:2px;">PRIMARY THEATERS</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇮🇷 Iran · 🇮🇱 Israel · 🇱🇧 Lebanon</div>
+    <div class="chart-notes">
+      <div class="chart-note">
+        <div class="chart-note-label">Trigger point</div>
+        <div class="chart-note-value red">Feb 28</div>
+        <div class="chart-note-copy">War outbreak turns a stable range into a steep repricing event.</div>
       </div>
-      <div style="padding:12px;background:rgba(212,132,42,0.1);border-left:3px solid #d4842a;">
-        <div style="font-family:var(--mono);font-size:10px;color:#d4842a;letter-spacing:2px;">AFFECTED NATIONS</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇸🇦 Saudi Arabia · 🇰🇼 Kuwait · 🇧🇭 Bahrain · 🇶🇦 Qatar</div>
+      <div class="chart-note">
+        <div class="chart-note-label">Peak print</div>
+        <div class="chart-note-value">$116.5</div>
+        <div class="chart-note-copy">The price crest reflects fears around Hormuz disruption and prolonged conflict.</div>
       </div>
-      <div style="padding:12px;background:rgba(74,144,217,0.1);border-left:3px solid #4a90d9;">
-        <div style="font-family:var(--mono);font-size:10px;color:#4a90d9;letter-spacing:2px;">LONG-RANGE STRIKES</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">🇾🇪 Yemen · 🇮🇶 Iraq · 🌊 Indian Ocean</div>
-      </div>
-      <div style="padding:12px;background:rgba(201,168,108,0.1);border-left:3px solid var(--accent);">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;">GLOBAL IMPACT</div>
-        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">⛽ Strait of Hormuz · 🚢 Red Sea Lanes</div>
+      <div class="chart-note">
+        <div class="chart-note-label">Strategic read</div>
+        <div class="chart-note-value">Global</div>
+        <div class="chart-note-copy">This is not only a battlefield story; it is an energy security and supply-chain story.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KEY TIMELINE -->
+<section class="map-section reveal">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Operational Geography</h2>
+    </div>
+    <p class="section-intro">Instead of a decorative map, the conflict footprint is framed as an information graphic: core theaters, secondary exposure, maritime chokepoints, and long-range strike arcs.</p>
+  </div>
+  <div class="map-box">
+    <h2>Conflict Zone Overview</h2>
+    <p>As of April 3, 2026 · At least 8 countries directly affected by military operations</p>
+    <div class="map-stage">
+      <img src="../assets/hormuz-map.png" alt="Operational geography of the Middle East conflict">
+      <div class="map-grid"></div>
+      <div class="map-ring r1"></div>
+      <div class="map-ring r2"></div>
+      <div class="map-ring r3"></div>
+
+      <div class="map-hotspot primary" style="left:60%;top:41%;">
+        <div class="map-label">
+          <span class="map-label-title">Primary theaters</span>
+          <span class="map-label-copy">Iran · Israel · Lebanon</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot secondary" style="left:48%;top:48%;">
+        <div class="map-label">
+          <span class="map-label-title">Base exposure</span>
+          <span class="map-label-copy">Saudi Arabia · Kuwait · Bahrain · Qatar</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot remote" style="left:33%;top:59%;">
+        <div class="map-label">
+          <span class="map-label-title">Long-range strikes</span>
+          <span class="map-label-copy">Yemen · Iraq · Indian Ocean</span>
+        </div>
+      </div>
+
+      <div class="map-hotspot maritime" style="left:53%;top:57%;">
+        <div class="map-label">
+          <span class="map-label-title">Maritime chokepoints</span>
+          <span class="map-label-copy">Strait of Hormuz · Red Sea lanes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-summary">
+      <div class="map-legend">
+        <div class="legend-card primary">
+          <h3>Core battlespace</h3>
+          <p>Direct exchanges, high-value strikes, and leadership decapitation drive the conflict center of gravity.</p>
+        </div>
+        <div class="legend-card secondary">
+          <h3>Regional spillover</h3>
+          <p>US bases and Gulf infrastructure expand the war beyond bilateral confrontation.</p>
+        </div>
+        <div class="legend-card remote">
+          <h3>Extended reach</h3>
+          <p>Remote launches and proxy activity widen the operational envelope far beyond the Gulf coast.</p>
+        </div>
+        <div class="legend-card maritime">
+          <h3>Systemic risk</h3>
+          <p>Shipping lanes and oil transit routes convert military escalation into global economic shock.</p>
+        </div>
+      </div>
+      <div class="map-metrics">
+        <h3>Footprint metrics</h3>
+        <p>A compact readout for decision-makers: the conflict touches state territory, alliance infrastructure, and global trade routes at the same time.</p>
+        <div class="map-metric-grid">
+          <div class="map-metric">
+            <strong>8+</strong>
+            <span>Directly affected states</span>
+          </div>
+          <div class="map-metric">
+            <strong>2</strong>
+            <span>Critical maritime lanes</span>
+          </div>
+          <div class="map-metric">
+            <strong>3</strong>
+            <span>Strike depth bands</span>
+          </div>
+          <div class="map-metric">
+            <strong>Multi-front</strong>
+            <span>Conflict geometry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="timeline-section reveal">
-  <h2>Key Milestones</h2>
-  <div class="tl">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Escalation Timeline</h2>
+    </div>
+    <p class="section-intro">The sequence is designed as a rising-pressure narrative rather than a list: regional trigger, direct exchange, failed de-escalation, then systemic spillover.</p>
+  </div>
+  <div class="timeline-shell">
     <div class="tl-item">
       <div class="tl-date">2023.10.07</div>
       <div class="tl-title">Al-Aqsa Flood: The Spark That Ignited the Middle East</div>
@@ -130,12 +244,12 @@
     <div class="tl-item">
       <div class="tl-date">2025.12.28</div>
       <div class="tl-title">Iranian Unrest: Mass Protests Erupt</div>
-      <div class="tl-desc">Inflation and currency collapse triggered nationwide demonstrations that rapidly escalated from economic grievances to demands for regime change. The US saw a "window of opportunity."</div>
+      <div class="tl-desc">Inflation and currency collapse triggered nationwide demonstrations that rapidly escalated from economic grievances to demands for regime change. The US saw a “window of opportunity.”</div>
     </div>
     <div class="tl-item">
       <div class="tl-date">2026.01 — 2026.02</div>
       <div class="tl-title">Military Buildup and the Final Negotiations</div>
-      <div class="tl-desc">The largest US military buildup in the Middle East in history, accompanied by resumed nuclear talks. On February 25, Iran's Foreign Minister declared a "historic deal within reach." Three days later, war broke out.</div>
+      <div class="tl-desc">The largest US military buildup in the Middle East in history, accompanied by resumed nuclear talks. On February 25, Iran's Foreign Minister declared a “historic deal within reach.” Three days later, war broke out.</div>
     </div>
     <div class="tl-item critical">
       <div class="tl-date">2026.02.28</div>
@@ -145,47 +259,64 @@
     <div class="tl-item critical">
       <div class="tl-date">2026.03 — Present</div>
       <div class="tl-title">Escalation and Global Shockwaves</div>
-      <div class="tl-desc">Strait of Hormuz crisis, Hezbollah and Houthi forces join the fight, oil prices surge, US ground troops arrive. The expectation of a "swift victory" fades into a war of attrition.</div>
+      <div class="tl-desc">Strait of Hormuz crisis, Hezbollah and Houthi forces join the fight, oil prices surge, US ground troops arrive. The expectation of a “swift victory” fades into a war of attrition.</div>
     </div>
   </div>
 </section>
 
-<!-- CHAPTERS -->
 <section class="chapters reveal">
-  <h2>Full Report</h2>
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Full Report</h2>
+    </div>
+    <p class="section-intro">Each chapter is presented as a self-contained editorial spread, but the full set reads as one continuous escalation narrative.</p>
+  </div>
   <div class="ch-grid">
     <a class="ch-card" href="chapter1-forty-years.html">
-      <div class="ch-num">I</div>
-      <div class="ch-title">Forty Years of Enmity</div>
-      <div class="ch-desc">From the 1979 Islamic Revolution to the "Axis of Evil"—the historical roots of US-Iran confrontation. Oil, nuclear weapons, proxy wars: an inexorable path to conflict.</div>
+      <div>
+        <div class="ch-num">I</div>
+        <div class="ch-title">Forty Years of Enmity</div>
+        <div class="ch-desc">From the 1979 Islamic Revolution to the “Axis of Evil”—the historical roots of US-Iran confrontation. Oil, nuclear weapons, proxy wars: an inexorable path to conflict.</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter2-abyss.html">
-      <div class="ch-num">II</div>
-      <div class="ch-title">Descent into the Abyss</div>
-      <div class="ch-desc">2023 Al-Aqsa Flood → 2024 Israel-Iran exchanges → 2025 nuclear strikes → negotiations → protests → military buildup. How each escalation made war inevitable.</div>
+      <div>
+        <div class="ch-num">II</div>
+        <div class="ch-title">Descent into the Abyss</div>
+        <div class="ch-desc">2023 Al-Aqsa Flood → 2024 Israel-Iran exchanges → 2025 nuclear strikes → negotiations → protests → military buildup. How each escalation made war inevitable.</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter3-epic-fury.html">
-      <div class="ch-num">III</div>
-      <div class="ch-title">Operation Epic Fury</div>
-      <div class="ch-desc">February 28, 2026. Lightning decapitation, school bombings, the first American casualties—the staggering first 72 hours of war.</div>
+      <div>
+        <div class="ch-num">III</div>
+        <div class="ch-title">Operation Epic Fury</div>
+        <div class="ch-desc">February 28, 2026. Lightning decapitation, school bombings, the first American casualties—the staggering first 72 hours of war.</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter4-wildfire.html">
-      <div class="ch-num">IV</div>
-      <div class="ch-title">Wildfire</div>
-      <div class="ch-desc">Hezbollah opens a second front, Houthis join the fray, the Strait of Hormuz is blockaded, Iranian missiles strike US bases 2,500 miles away—the war spreads worldwide.</div>
+      <div>
+        <div class="ch-num">IV</div>
+        <div class="ch-title">Wildfire</div>
+        <div class="ch-desc">Hezbollah opens a second front, Houthis join the fray, the Strait of Hormuz is blockaded, Iranian missiles strike US bases 2,500 miles away—the war spreads worldwide.</div>
+      </div>
     </a>
     <a class="ch-card" href="chapter5-price.html">
-      <div class="ch-num">V</div>
-      <div class="ch-title">The Price and the Puzzle</div>
-      <div class="ch-desc">The largest oil supply disruption in history, flour prices in Iran up 986%, US ground troops deployed. Ceasefire brinkmanship, great power rivalries—where does it end?</div>
+      <div>
+        <div class="ch-num">V</div>
+        <div class="ch-title">The Price and the Puzzle</div>
+        <div class="ch-desc">The largest oil supply disruption in history, flour prices in Iran up 986%, US ground troops deployed. Ceasefire brinkmanship, great power rivalries—where does it end?</div>
+      </div>
     </a>
   </div>
 </section>
 
-<!-- METHODOLOGY -->
 <section class="methodology reveal">
-  <h2>Sources</h2>
-  <p style="max-width:720px;margin:0 auto 28px;text-align:center;font-size:14px;color:var(--text-secondary);">Sources are organized by reporting, academic, and data provenance, with key claims cross-checked across independent references to strengthen trust.</p>
+  <div class="section-head">
+    <div>
+      <h2 class="section-title">Sources and Verification</h2>
+    </div>
+    <p class="section-intro">The credibility cue is made explicit: reporting, academic interpretation, and market data are separated and then re-linked through cross-reference.</p>
+  </div>
   <div class="method-grid">
     <div class="method-item">
       <h3>News Sources</h3>
@@ -206,9 +337,8 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-brand">X-AGENT PRODUCED</div>
+  <div class="footer-brand">X-AGENT PRODUCED · STONEHENGE AI SHOWCASE</div>
   <div class="footer-note">
     This report was independently researched, analyzed, and visualized by X-Agent. Human guidance and editorial review were provided.<br>
     Data as of: April 3, 2026. For research reference only; does not represent any political stance.
@@ -217,7 +347,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
-// Oil Price Chart
 document.addEventListener('DOMContentLoaded', function() {
   const ctx = document.getElementById('oilChart');
   if (ctx) {
@@ -232,12 +361,11 @@ document.addEventListener('DOMContentLoaded', function() {
           backgroundColor: 'rgba(201,168,108,0.1)',
           fill: true,
           tension: 0.3,
-          pointRadius: 4,
           pointBackgroundColor: function(context) {
             return context.dataIndex === 3 ? '#c94040' : '#c9a86c';
           },
           pointRadius: function(context) {
-            return context.dataIndex === 3 ? 8 : 4;
+            return context.dataIndex === 3 ? 7 : 3.5;
           },
           borderWidth: 2
         }]
@@ -262,12 +390,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         scales: {
           x: {
-            ticks: { color: '#666', font: { size: 11, family: 'monospace' }, maxRotation: 0 },
+            ticks: { color: '#787267', font: { size: 11, family: 'monospace' }, maxRotation: 0 },
             grid: { color: 'rgba(42,42,53,0.5)' }
           },
           y: {
             ticks: {
-              color: '#666',
+              color: '#787267',
               font: { size: 11, family: 'monospace' },
               callback: function(value) { return '$' + value; }
             },
@@ -283,7 +411,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
