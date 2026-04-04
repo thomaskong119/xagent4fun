@@ -219,6 +219,9 @@ p { color: var(--text-secondary); }
   align-items: end;
   margin-bottom: 28px;
 }
+.section-head-compact {
+  grid-template-columns: minmax(0, 1fr);
+}
 .section-title {
   font-family: var(--serif);
   font-size: clamp(1.55rem, 2.6vw, 2.15rem);
@@ -828,6 +831,29 @@ html[lang^="zh"] .ch-card::after { content: '进入章节'; }
   .tl-item::before { left: -34px; top: 26px; width: 14px; height: 14px; }
   .tl-item::after { left: -20px; top: 33px; width: 8px; }
   .map-stage { min-height: 720px; }
+  .map-hotspot {
+    width: min(42vw, 136px);
+  }
+  .map-ring.r1 { width: 160px; height: 160px; right: 18%; top: 24%; }
+  .map-ring.r2 { width: 240px; height: 240px; right: 4%; top: 10%; }
+  .map-ring.r3 { width: 320px; height: 320px; right: -8%; top: 2%; }
+  .map-hotspot.primary,
+  .map-hotspot.secondary,
+  .map-hotspot.maritime {
+    transform: translate(-100%, -50%);
+  }
+  .map-hotspot.primary .map-label,
+  .map-hotspot.secondary .map-label,
+  .map-hotspot.maritime .map-label {
+    left: auto;
+    right: calc(100% + 10px);
+  }
+  .map-hotspot.primary .map-label::before,
+  .map-hotspot.secondary .map-label::before,
+  .map-hotspot.maritime .map-label::before {
+    left: auto;
+    right: -18px;
+  }
   .map-label {
     min-width: 116px;
     padding: 8px 10px;
