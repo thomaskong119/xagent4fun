@@ -28,6 +28,8 @@ function renderHeadline() {
   const { headline } = state.stats;
   document.getElementById('threat-level').textContent = headline.threatLevel;
   document.getElementById('threat-message').textContent = headline.message;
+  const ts = document.getElementById('hero-ts');
+  if (ts) ts.textContent = new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
 }
 
 function renderThreatCards() {
@@ -40,6 +42,7 @@ function renderThreatCards() {
       <div class="badge ${card.severity}">${state.lang === 'zh' ? card.statusZh : card.status}</div>
       <h3>${state.lang === 'zh' ? card.titleZh : card.title}</h3>
       <p>${card.detail}</p>
+      <span class="card-reliability">Reliability: A2</span>
     `;
     container.appendChild(el);
   });
@@ -48,9 +51,11 @@ function renderThreatCards() {
 function renderKeyFigures() {
   const container = document.getElementById('key-figures');
   container.innerHTML = '';
+  const dangerValues = ['-81%', '150+', '27', '72h'];
   state.stats.keyFigures.forEach((item) => {
     const el = document.createElement('article');
-    el.className = 'stat-card';
+    const isDanger = dangerValues.includes(item.value);
+    el.className = `stat-card${isDanger ? ' danger' : ''}`;
     el.innerHTML = `
       <span class="trend">${state.lang === 'zh' ? item.labelZh : item.label}</span>
       <h3>${item.value}</h3>
@@ -90,7 +95,7 @@ function renderRerouteTable() {
     tr.innerHTML = `
       <td>${state.lang === 'zh' ? row.metricZh : row.metric}</td>
       <td>${row.suez}</td>
-      <td>${row.cape}</td>
+      <td class="highlight-cell">${row.cape}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -105,14 +110,16 @@ function statusClass(status) {
 function renderCarriers() {
   const tbody = document.getElementById('carrier-body');
   tbody.innerHTML = '';
-  state.carriers.carriers.forEach((carrier) => {
+  const reliabilities = ['A2', 'A1', 'B2', 'A2', 'B2', 'B3'];
+  state.carriers.carriers.forEach((carrier, i) => {
     const tr = document.createElement('tr');
     const label = state.lang === 'zh' ? carrier.statusZh : carrier.status;
     tr.innerHTML = `
-      <td>${carrier.name}</td>
+      <td><strong>${carrier.name}</strong></td>
       <td><span class="status-pill ${statusClass(carrier.status)}">${label}</span></td>
       <td>${carrier.region}</td>
       <td>${carrier.note}</td>
+      <td class="reliability-cell">${reliabilities[i] || 'B2'}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -142,14 +149,17 @@ function renderAll() {
   renderCarriers();
   renderGeopolitics();
 
+  // Map
   const mapNode = document.getElementById('map');
   mapNode.innerHTML = '';
-  if (state.map) {
-    state.map.remove();
-    state.map = null;
-  }
+  if (state.map) { state.map.remove(); state.map = null; }
   state.map = window.renderThreatMap(state.attacks, state.lang);
+
+  // Charts
   window.renderCharts(state.stats, state.lang);
+
+  // Force graph
+  if (window.ForceGraph) window.ForceGraph.setLang(state.lang);
 }
 
 async function init() {
@@ -161,6 +171,19 @@ async function init() {
 
   renderAll();
 
+  // Force graph
+  if (window.ForceGraph) window.ForceGraph.init(state.lang);
+
+  // NER demo
+  if (window.NERDemo) window.NERDemo.init();
+
+  // Intel ticker
+  if (window.IntelTicker) window.IntelTicker.start();
+
+  // Agent console
+  if (window.AgentConsole) window.AgentConsole.start();
+
+  // Language toggle
   document.getElementById('lang-toggle').addEventListener('click', () => {
     state.lang = state.lang === 'en' ? 'zh' : 'en';
     renderAll();
@@ -170,6 +193,6 @@ async function init() {
 document.addEventListener('DOMContentLoaded', () => {
   init().catch((error) => {
     console.error(error);
-    document.body.innerHTML = `<div style="padding:40px;color:#fff;font-family:Inter,sans-serif;">Dashboard failed to load data.</div>`;
+    document.body.innerHTML = `<div style="padding:40px;color:#fff;font-family:Inter,sans-serif;">Dashboard failed to load data. ${error.message}</div>`;
   });
 });
