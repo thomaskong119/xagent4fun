@@ -106,7 +106,7 @@ figcaption {
   pointer-events: none;
 }
 .ch-hero::after {
-  content: 'X-Agent editorial sample';
+  content: 'Chapter file';
   position: absolute;
   left: 50%;
   top: 94px;
@@ -121,7 +121,7 @@ figcaption {
   background: rgba(10,10,15,0.5);
   backdrop-filter: blur(8px);
 }
-html[lang^="zh"] .ch-hero::after { content: 'X-Agent 专题样稿'; letter-spacing: 2px; }
+html[lang^="zh"] .ch-hero::after { content: '章节页'; letter-spacing: 2px; }
 .ch-hero > * { position: relative; z-index: 1; }
 .ch-num {
   font-family: var(--mono);
@@ -571,9 +571,10 @@ html[lang^="zh"] .source::before {
 }
 .footer-brand {
   font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: var(--chapter-accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }

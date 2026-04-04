@@ -99,14 +99,7 @@ p { color: var(--text-secondary); }
   background: linear-gradient(90deg, transparent, var(--accent));
 }
 .hero-tag::after { transform: scaleX(-1); }
-.hero-brand {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(140px, auto));
-  gap: 12px;
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.3s forwards;
-}
+.hero-brand { display: none; }
 .hero-brand-item {
   text-align: left;
   padding: 14px 16px;
@@ -785,10 +778,11 @@ html[lang^="zh"] .ch-card::after { content: '进入章节'; }
 }
 .footer-brand {
   font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: var(--accent);
-  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
 }
 .footer-note {
   color: var(--text-secondary);
