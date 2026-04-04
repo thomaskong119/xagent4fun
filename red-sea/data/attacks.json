@@ -1,0 +1,128 @@
+{
+  "generated": "2026-04-05",
+  "timeline": [
+    {
+      "id": 1,
+      "phase": "Phase 1",
+      "phaseKey": "timeline.phase1.title",
+      "period": "2023.11 - 2025.10",
+      "color": "#ff5b6e",
+      "summaryKey": "timeline.phase1.summary",
+      "details": [
+        "Houthis launched 100+ attacks affecting shipping linked to 60+ countries.",
+        "July 2025: Magic Seas and Eternity C were sunk, marking major escalation."
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "Phase 2",
+      "phaseKey": "timeline.phase2.title",
+      "period": "2025.11 - 2026.02",
+      "color": "#1dd1a1",
+      "summaryKey": "timeline.phase2.summary",
+      "details": [
+        "Gaza ceasefire contributed to a pause in Houthi attacks.",
+        "A relative calm period lasted about 3.5 months."
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "Phase 3",
+      "phaseKey": "timeline.phase3.title",
+      "period": "2026.02.28",
+      "color": "#ff9f43",
+      "summaryKey": "timeline.phase3.summary",
+      "details": [
+        "US-Israel strikes on Iran (Operation Epic Fury + Roaring Lion).",
+        "Iran moved to block Hormuz Strait; traffic fell 81% within 24 hours."
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Phase 4",
+      "phaseKey": "timeline.phase4.title",
+      "period": "2026.03.02 - Present",
+      "color": "#ff3b30",
+      "summaryKey": "timeline.phase4.summary",
+      "details": [
+        "Houthi attacks resumed in the Red Sea.",
+        "Hormuz, Bab el-Mandeb, and Suez simultaneously degraded or disrupted."
+      ]
+    }
+  ],
+  "mapEvents": [
+    {
+      "name": "Hormuz traffic collapse",
+      "nameZh": "霍尔木兹交通崩塌",
+      "lat": 26.5667,
+      "lng": 56.25,
+      "status": "closed",
+      "date": "2026-02-28",
+      "description": "Iranian closure actions drove an 81% traffic drop in 24 hours; 150+ ships reported delayed or stranded."
+    },
+    {
+      "name": "Bab el-Mandeb attacks resume",
+      "nameZh": "曼德海峡袭击恢复",
+      "lat": 12.5833,
+      "lng": 43.3333,
+      "status": "high-risk",
+      "date": "2026-03-02",
+      "description": "Houthi attacks resumed against Red Sea shipping after the prior pause."
+    },
+    {
+      "name": "Suez corridor collapse",
+      "nameZh": "苏伊士走廊失效",
+      "lat": 30.455,
+      "lng": 32.35,
+      "status": "closed",
+      "date": "2026-03-03",
+      "description": "Commercial routing through Suez remained functionally impaired with most operators rerouting via the Cape."
+    },
+    {
+      "name": "Tanker attack cluster",
+      "nameZh": "油轮遇袭点",
+      "lat": 25.85,
+      "lng": 54.9,
+      "status": "high-risk",
+      "date": "2026-03-01",
+      "description": "Three tankers were reported attacked during the Hormuz crisis window."
+    },
+    {
+      "name": "Djibouti approach threat",
+      "nameZh": "吉布提航道威胁",
+      "lat": 11.6,
+      "lng": 43.15,
+      "status": "high-risk",
+      "date": "2026-03-04",
+      "description": "Approaches to the southern Red Sea remained exposed to missile and drone threats."
+    }
+  ],
+  "ports": [
+    { "name": "Djibouti", "nameZh": "吉布提", "lat": 11.5721, "lng": 43.1456 },
+    { "name": "Aden", "nameZh": "亚丁", "lat": 12.7855, "lng": 45.0187 },
+    { "name": "Jeddah", "nameZh": "吉达", "lat": 21.4858, "lng": 39.1925 },
+    { "name": "Jebel Ali", "nameZh": "杰贝阿里", "lat": 25.0108, "lng": 55.0617 },
+    { "name": "Salalah", "nameZh": "萨拉拉", "lat": 16.9497, "lng": 54.0047 }
+  ],
+  "chokepoints": [
+    { "name": "Strait of Hormuz", "nameZh": "霍尔木兹海峡", "lat": 26.5667, "lng": 56.25, "status": "closed" },
+    { "name": "Bab el-Mandeb", "nameZh": "曼德海峡", "lat": 12.5833, "lng": 43.3333, "status": "high-risk" },
+    { "name": "Suez Canal", "nameZh": "苏伊士运河", "lat": 30.455, "lng": 32.35, "status": "closed" }
+  ],
+  "routes": {
+    "normal": [
+      [25.2048, 55.2708],
+      [21.4858, 39.1925],
+      [12.5833, 43.3333],
+      [30.455, 32.35],
+      [31.2, 32.3]
+    ],
+    "cape": [
+      [25.2048, 55.2708],
+      [16.9497, 54.0047],
+      [-34.3573, 18.472],
+      [4.1755, 9.7067],
+      [36.1408, -5.3536]
+    ]
+  }
+}

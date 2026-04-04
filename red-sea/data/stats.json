@@ -1,0 +1,140 @@
+{
+  "headline": {
+    "threatLevel": "CRITICAL",
+    "message": "MULTIPLE CHOKEPOINTS COMPROMISED"
+  },
+  "threatCards": [
+    {
+      "id": "hormuz",
+      "title": "Strait of Hormuz",
+      "titleZh": "霍尔木兹海峡",
+      "status": "Blockaded",
+      "statusZh": "封锁",
+      "severity": "critical",
+      "detail": "Traffic down 81% within 24h; 150+ vessels disrupted."
+    },
+    {
+      "id": "redsea",
+      "title": "Red Sea / Bab el-Mandeb",
+      "titleZh": "红海 / 曼德海峡",
+      "status": "Attacks Resumed",
+      "statusZh": "袭击恢复",
+      "severity": "warning",
+      "detail": "Houthi attacks resumed after 3.5 months of relative calm."
+    },
+    {
+      "id": "suez",
+      "title": "Suez Canal",
+      "titleZh": "苏伊士运河",
+      "status": "Functionally Closed",
+      "statusZh": "实质关闭",
+      "severity": "critical",
+      "detail": "Transit volumes remain deeply depressed versus 2023 baseline."
+    }
+  ],
+  "keyFigures": [
+    {
+      "label": "Suez Transits 2023",
+      "labelZh": "2023年苏伊士通行量",
+      "value": "26,434",
+      "note": "annual vessel transits"
+    },
+    {
+      "label": "Suez Transits 2025",
+      "labelZh": "2025年苏伊士通行量",
+      "value": "12,758",
+      "note": "51.7% below 2023"
+    },
+    {
+      "label": "Hormuz Traffic Shock",
+      "labelZh": "霍尔木兹流量冲击",
+      "value": "-81%",
+      "note": "within 24 hours of closure"
+    },
+    {
+      "label": "Stranded / Delayed Vessels",
+      "labelZh": "滞留/延误船舶",
+      "value": "150+",
+      "note": "Hormuz crisis estimate"
+    },
+    {
+      "label": "US Bases Hit by Iran",
+      "labelZh": "伊朗打击美军基地",
+      "value": "27",
+      "note": "across 9 countries"
+    },
+    {
+      "label": "Qatar LNG Exposure",
+      "labelZh": "卡塔尔LNG暴露度",
+      "value": "20%",
+      "note": "share of global LNG supply at risk"
+    },
+    {
+      "label": "Insurance Notice",
+      "labelZh": "保险风险通知",
+      "value": "72h",
+      "note": "war-risk cancellation lead time"
+    },
+    {
+      "label": "French Naval Escort",
+      "labelZh": "法国海军护航",
+      "value": "10 ships",
+      "note": "announced March 9"
+    }
+  ],
+  "suezTransitSeries": {
+    "labels": ["2023", "2024", "2025", "2026 (early)"],
+    "values": [26434, 18210, 12758, 10574]
+  },
+  "freightIndex": {
+    "labels": ["Pre-crisis baseline", "Red Sea disruption", "Hormuz closure", "Triple chokepoint crisis"],
+    "values": [100, 165, 245, 310]
+  },
+  "rerouteComparison": [
+    {
+      "metric": "Distance",
+      "metricZh": "航程",
+      "suez": "Baseline",
+      "cape": "+6,000 nm"
+    },
+    {
+      "metric": "Transit Time",
+      "metricZh": "运输时间",
+      "suez": "Baseline",
+      "cape": "+10-14 days"
+    },
+    {
+      "metric": "Cost per Vessel",
+      "metricZh": "单船成本",
+      "suez": "Baseline",
+      "cape": "+USD 1,000,000"
+    }
+  ],
+  "geopolitics": [
+    {
+      "actor": "Houthis",
+      "actorZh": "胡塞武装",
+      "description": "Resumed maritime attacks in the Red Sea and Bab el-Mandeb, targeting commercial shipping to apply regional pressure."
+    },
+    {
+      "actor": "Iran",
+      "actorZh": "伊朗",
+      "description": "Escalated after US-Israel strikes by moving to shut Hormuz and broadening the regional military confrontation."
+    },
+    {
+      "actor": "United States",
+      "actorZh": "美国",
+      "description": "Conducted strikes on Iran and remains engaged in force protection and regional naval operations."
+    },
+    {
+      "actor": "Israel",
+      "actorZh": "以色列",
+      "description": "Participated in coordinated strikes and remains central to the escalation chain tied to Gaza and Iran."
+    },
+    {
+      "actor": "European Navies",
+      "actorZh": "欧洲海军",
+      "description": "Shifted toward escort and maritime security operations, including France's dispatch of 10 warships."
+    }
+  ]
+}

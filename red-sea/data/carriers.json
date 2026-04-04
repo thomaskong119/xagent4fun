@@ -1,0 +1,47 @@
+{
+  "updated": "2026-04-05",
+  "carriers": [
+    {
+      "name": "Maersk",
+      "status": "Suspended",
+      "statusZh": "暂停",
+      "region": "Middle East / Red Sea",
+      "note": "Avoiding conflict-affected routes; rerouting around the Cape where possible."
+    },
+    {
+      "name": "CMA CGM",
+      "status": "Partial Resumption",
+      "statusZh": "部分恢复",
+      "region": "Middle East bookings",
+      "note": "Resumed selected bookings from March 11 with emergency surcharges of USD 2000/3000."
+    },
+    {
+      "name": "COSCO",
+      "status": "Suspended",
+      "statusZh": "暂停",
+      "region": "Regional exposure",
+      "note": "Maintaining high caution amid unresolved security conditions."
+    },
+    {
+      "name": "MSC",
+      "status": "Suspended",
+      "statusZh": "暂停",
+      "region": "Red Sea / Gulf",
+      "note": "Operational adjustments favor long-haul rerouting over Suez passage."
+    },
+    {
+      "name": "ONE",
+      "status": "Suspended",
+      "statusZh": "暂停",
+      "region": "Middle East network",
+      "note": "Risk controls remain in effect pending naval stabilization."
+    },
+    {
+      "name": "HMM",
+      "status": "Suspended",
+      "statusZh": "暂停",
+      "region": "Middle East services",
+      "note": "Monitoring insurance and convoy conditions before any restart."
+    }
+  ]
+}
